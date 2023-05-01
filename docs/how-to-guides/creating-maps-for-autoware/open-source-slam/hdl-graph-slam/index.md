@@ -123,11 +123,11 @@ rosbag play --clock dataset.bag
 
 ## Papers
 
-Kenji Koide, Jun Miura, and Emanuele Menegatti, A Portable 3D LIDAR-based System for Long-term and Wide-area People Behavior Measurement, Advanced Robotic Systems, 2019 [[link]](https://www.researchgate.net/publication/331283709_A_portable_three-dimensional_LIDAR-based_system_for_long-term_and_wide-area_people_behavior_measurement).
+Kenji Koide, Jun Miura, and Emanuele Menegatti, A Portable 3D LIDAR-based System for Long-term and Wide-area People Behavior Measurement, Advanced Robotic Systems, 2019 [[link]](<https://www.researchgate.net/publication/331283709_A_portable_three-dimensional_LIDAR-based_system_for_long-term_and_wide-area_people_behavior_measurement>).
 
 ## Contact
 
-Kenji Koide, k.koide@aist.go.jp, [https://staff.aist.go.jp/k.koide](https://staff.aist.go.jp/k.koide)
+Kenji Koide, <k.koide@aist.go.jp>, [https://staff.aist.go.jp/k.koide](https://staff.aist.go.jp/k.koide)
 
-[[Active Intelligent Systems Laboratory, Toyohashi University of Technology, Japan]](http://www.aisl.cs.tut.ac.jp)  
-[[Mobile Robotics Research Team, National Institute of Advanced Industrial Science and Technology (AIST), Japan]](https://unit.aist.go.jp/hcmrc/mr-rt/contact.html)
+[[Active Intelligent Systems Laboratory, Toyohashi University of Technology, Japan]](<http://www.aisl.cs.tut.ac.jp>)  
+[[Mobile Robotics Research Team, National Institute of Advanced Industrial Science and Technology (AIST), Japan]](<https://unit.aist.go.jp/hcmrc/mr-rt/contact.html>)

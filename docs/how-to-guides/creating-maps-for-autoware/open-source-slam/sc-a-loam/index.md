@@ -108,4 +108,4 @@ roslaunch aloam_velodyne aloam_mulran.launch
 
 ## Contact
 
-- Maintainer: paulgkim@kaist.ac.kr
+- Maintainer: <paulgkim@kaist.ac.kr>
