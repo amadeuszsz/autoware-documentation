@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - galactic
+      - f1tenth
     paths:
       - mkdocs.yaml
       - "**/*.md"
