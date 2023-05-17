@@ -83,5 +83,10 @@
     "version": "fix-toggle",
     "title": "fix-toggle",
     "aliases": []
+  },
+  {
+    "version": "f1tenth",
+    "title": "f1tenth",
+    "aliases": []
   }
 ]
