@@ -17,7 +17,7 @@
         <link rel="next" href="../../tutorials/">
       
       <link rel="icon" href="../../assets/images/autoware-foundation.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
@@ -4216,10 +4216,64 @@
   
   
   
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../support/troubleshooting/">Troubleshooting</a>
+          
+            <label for="__nav_8_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../support/troubleshooting/" class="md-nav__link">
-        Troubleshooting
+      <a href="../../support/troubleshooting/performance-troubleshooting/" class="md-nav__link">
+        Performance Troubleshooting
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -4400,15 +4454,26 @@ Since all <abbr title="Robot Operating System">ROS</abbr> 2 nodes use domain ID 
 <h4 id="tuning-dds">Tuning DDS<a class="headerlink" href="#tuning-dds" title="Permanent link">#</a></h4>
 <p>Unless customized, CycloneDDS is adopted by default. For example, to execute Autoware with CycloneDDS, prepare a config file. A sample config file is given below. Save it as <code>cyclonedds_config.xml</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
-<span class="nt">&lt;CycloneDDS</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"https://cdds.io/config"</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">"https://cdds.io/config</span>
-<span class="s">https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd"</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Domain</span><span class="w"> </span><span class="na">id=</span><span class="s">"any"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;CycloneDDS</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"https://cdds.io/config"</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">"https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;Domain</span><span class="w"> </span><span class="na">Id=</span><span class="s">"any"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;General&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Interfaces&gt;</span>
+<span class="w">                </span><span class="nt">&lt;NetworkInterface</span><span class="w"> </span><span class="na">autodetermine=</span><span class="s">"true"</span><span class="w"> </span><span class="na">priority=</span><span class="s">"default"</span><span class="w"> </span><span class="na">multicast=</span><span class="s">"default"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/Interfaces&gt;</span>
+<span class="w">            </span><span class="nt">&lt;AllowMulticast&gt;</span>default<span class="nt">&lt;/AllowMulticast&gt;</span>
+<span class="w">            </span><span class="nt">&lt;MaxMessageSize&gt;</span>65500B<span class="nt">&lt;/MaxMessageSize&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/General&gt;</span>
 <span class="w">        </span><span class="nt">&lt;Internal&gt;</span>
 <span class="w">            </span><span class="nt">&lt;SocketReceiveBufferSize</span><span class="w"> </span><span class="na">min=</span><span class="s">"10MB"</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Watermarks&gt;</span>
+<span class="w">                </span><span class="nt">&lt;WhcHigh&gt;</span>500kB<span class="nt">&lt;/WhcHigh&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/Watermarks&gt;</span>
 <span class="w">        </span><span class="nt">&lt;/Internal&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/Domain&gt;</span>
 <span class="nt">&lt;/CycloneDDS&gt;</span>
 </code></pre></div>
+<p>This configuration is mostly taken from <a href="https://github.com/eclipse-cyclonedds/cyclonedds/tree/a10ced3c81cc009e7176912190f710331a4d6caf#run-time-configuration">Eclipse Cyclone DDS:Run-time configuration documentation</a>.
+You can see why each value is set as such under the documentation link.</p>
 <p>Set the config file path and enlarge the Linux kernel maximum buffer size before launching Autoware.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CYCLONEDDS_URI</span><span class="o">=</span>file:///absolute/path/to/cyclonedds_config.xml
 sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>net.core.rmem_max<span class="o">=</span><span class="m">2147483647</span>
@@ -4416,8 +4481,8 @@ sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </s
 <p>For more information, Refer to <a href="https://docs.ros.org/en/humble/How-To-Guides/DDS-tuning.html"><abbr title="Robot Operating System">ROS</abbr> 2 documentation</a>. Reading user guide for chosen DDS is helpful for more understanding.</p>
 <h4 id="tuning-dds-for-multiple-host-computers-for-advanced-users">Tuning DDS for multiple host computers (for advanced users)<a class="headerlink" href="#tuning-dds-for-multiple-host-computers-for-advanced-users" title="Permanent link">#</a></h4>
 <p>When Autoware runs on multiple host computers, IP Fragmentation should be taken into account. As <a href="https://docs.ros.org/en/humble/How-To-Guides/DDS-tuning.html#cross-vendor-tuning"><abbr title="Robot Operating System">ROS</abbr> 2 documentation</a> recommends, parameters for IP Fragmentation should be set as shown in the following example.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sysctl<span class="w"> </span>net.ipv4.ipfrag_time<span class="o">=</span><span class="m">3</span>
-sudo<span class="w"> </span>sysctl<span class="w"> </span>net.ipv4.ipfrag_high_thresh<span class="o">=</span><span class="m">134217728</span><span class="w">     </span><span class="c1"># (128 MB)</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>net.ipv4.ipfrag_time<span class="o">=</span><span class="m">3</span>
+sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>net.ipv4.ipfrag_high_thresh<span class="o">=</span><span class="m">134217728</span><span class="w">     </span><span class="c1"># (128 MB)</span>
 </code></pre></div>
 <!-- prettier-ignore --></div>
 
