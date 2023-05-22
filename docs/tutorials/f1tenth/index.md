@@ -1,4 +1,4 @@
-# Scenario simulation
+# F1TENTH
 
 !!! warning
 
