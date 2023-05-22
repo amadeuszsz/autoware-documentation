@@ -17,7 +17,7 @@
         <link rel="next" href="../control/">
       
       <link rel="icon" href="../../../assets/images/autoware-foundation.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
@@ -4266,10 +4266,64 @@
   
   
   
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../support/troubleshooting/">Troubleshooting</a>
+          
+            <label for="__nav_8_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../support/troubleshooting/" class="md-nav__link">
-        Troubleshooting
+      <a href="../../../support/troubleshooting/performance-troubleshooting/" class="md-nav__link">
+        Performance Troubleshooting
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -4474,7 +4528,7 @@
 <p>Each component contains some modules that can be dynamically loaded and unloaded based on the situation. For instance, the Behavior Planning component includes modules such as lane change, intersection, and crosswalk modules.</p>
 <p>Our planning components are built based on the microautonomy architecture with Autoware. We adopt a modular system framework where the tasks are implemented as modules that can be dynamically loaded and unloaded to achieve different features depending on the given use cases.</p>
 <h2 id="component-interface">Component interface<a class="headerlink" href="#component-interface" title="Permanent link">#</a></h2>
-<p>The following describes the input/output concept between Planning Component and other components. See the <a href="/docs/design/autoware-interfaces/components/planning.md">Planning Component Interface (WIP)</a> page for the current implementation.</p>
+<p>The following describes the input/output concept between Planning Component and other components. See the <a href="../../autoware-interfaces/components/planning/">Planning Component Interface (WIP)</a> page for the current implementation.</p>
 <h3 id="input-to-the-planning-component">Input to the planning component<a class="headerlink" href="#input-to-the-planning-component" title="Permanent link">#</a></h3>
 <ul>
 <li><strong>From Map</strong><ul>
@@ -4679,7 +4733,7 @@
 <td>Intersection Occlusion Check</td>
 <td>Plan velocity for turning right/left at intersection to avoid a risk with the possibility of coming vehicles from occlusion area. <br> <br> Reference implementation is in <a href="https://autowarefoundation.github.io/autoware.universe/main/planning/behavior_velocity_planner/intersection-design/">Intersection Module</a>.</td>
 <td>- objects information <br> - Lanelet map (intersection lane)</td>
-<td>WIP</td>
+<td><img alt="intersection-occlusion" src="image/features-intersection-occlusion.drawio.svg"></td>
 </tr>
 <tr>
 <td>Intersection Traffic Jam Detection</td>
@@ -4727,7 +4781,7 @@
 <td>Speed Bump</td>
 <td>Plan velocity to decelerate for speed bumps. <br> <br> Reference implementation is in <a href="https://autowarefoundation.github.io/autoware.universe/main/planning/behavior_velocity_planner/speed-bump-design/">Speed Bump Module</a>.</td>
 <td>- Lanelet map (speed bump)</td>
-<td>WIP</td>
+<td><img alt="speed-bump" src="image/features-speed-bump.drawio.svg"></td>
 </tr>
 <tr>
 <td>Detection Area</td>
@@ -4757,7 +4811,7 @@
 <td>Autonomous Emergency Braking (AEB)</td>
 <td>Perform an emergency stop if a collision with an object ahead is anticipated. It is noted that this function is expected as a final safety layer, and this should work even in the event of failures in the Localization or Perception system. <br> <br> Reference implementation is in <a href="https://autowarefoundation.github.io/autoware.universe/main/planning/behavior_velocity_planner/out-of-lane-design/">Out of Lane Module</a>.</td>
 <td>- Primitive objects</td>
-<td>WIP</td>
+<td><img alt="aeb" src="image/features-aeb.drawio.svg"></td>
 </tr>
 <tr>
 <td>Minimum Risk Maneuver (MRM)</td>
@@ -4769,7 +4823,7 @@
 <td>Trajectory Validation</td>
 <td>Check the planned trajectory is safe. If it is unsafe, take appropriate action, such as modify the trajectory, stop sending the trajectory or report to the autonomous driving system. <br> <br> Reference implementation is in <a href="https://autowarefoundation.github.io/autoware.universe/main/planning/planning_validator/">Planning Validator</a>.</td>
 <td>- None</td>
-<td>WIP</td>
+<td><img alt="trajectory-validation" src="image/features-trajectory-validation.drawio.svg"></td>
 </tr>
 <tr>
 <td>Running Lane Map Generation</td>
