@@ -1,6 +1,6 @@
 # Installation
 
-> Note: The installation process is a copy of [docker installation for development](../../../installation/autoware/docker-installation-devel/#docker-installation-for-development). Minor changes have been made for the F1Tenth demonstration.
+> Note: The installation process is a copy of [docker installation for development](../../../installation/autoware/docker-installation-devel/#docker-installation-for-development). Minor changes have been made for the F1TENTH demonstration.
 
 ## Prerequisites
 
