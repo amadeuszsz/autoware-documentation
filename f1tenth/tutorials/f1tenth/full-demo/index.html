@@ -21,7 +21,7 @@
     
     
       
-        <title>Full Demo - Autoware Documentation</title>
+        <title>Full demo - Autoware Documentation</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Full Demo
+              Full demo
             
           </span>
         </div>
@@ -1102,9 +1102,94 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Full demo
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Full Demo
+        Full demo
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#running-steps" class="md-nav__link">
+    Running steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planning" class="md-nav__link">
+    Planning
+  </a>
+  
+    <nav class="md-nav" aria-label="Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#free-space-planner" class="md-nav__link">
+    Free space planner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-planners" class="md-nav__link">
+    Static planners
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control" class="md-nav__link">
+    Control
+  </a>
+  
+    <nav class="md-nav" aria-label="Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-predictive-control" class="md-nav__link">
+    Model Predictive Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pure-pursuit" class="md-nav__link">
+    Pure Pursuit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4415,6 +4500,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#running-steps" class="md-nav__link">
+    Running steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planning" class="md-nav__link">
+    Planning
+  </a>
+  
+    <nav class="md-nav" aria-label="Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#free-space-planner" class="md-nav__link">
+    Free space planner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-planners" class="md-nav__link">
+    Static planners
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control" class="md-nav__link">
+    Control
+  </a>
+  
+    <nav class="md-nav" aria-label="Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-predictive-control" class="md-nav__link">
+    Model Predictive Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pure-pursuit" class="md-nav__link">
+    Pure Pursuit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4431,11 +4585,175 @@
   
 
 
-<div><h1 id="full-demo">Full Demo<a class="headerlink" href="#full-demo" title="Permanent link">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Under Construction</p>
+<div><h1 id="full-demo">Full demo<a class="headerlink" href="#full-demo" title="Permanent link">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Running the F1TENTH demo requires some additional steps on top of building and installing Autoware, so make sure that <a href="../installation/">F1TENTH installation</a> has been completed first before proceeding.</p>
 </div>
+<h2 id="running-steps">Running steps<a class="headerlink" href="#running-steps" title="Permanent link">#</a></h2>
+<ol>
+<li>
+<p>Run the container if you have not already done so and update the environment.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/autoware
+./run_amd64.sh
+<span class="nb">cd</span><span class="w"> </span>autoware
+<span class="nb">source</span><span class="w"> </span>install/setup.bash
+sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>-y
+</code></pre></div>
+</li>
+<li>
+<p>Open a few (4-6) new terminal windows/tabs and enter the container with the following command in each of them.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/autoware
+./enter.sh
+<span class="nb">cd</span><span class="w"> </span>autoware
+<span class="nb">source</span><span class="w"> </span>install/setup.bash
+</code></pre></div>
+</li>
+<li>
+<p>Launch the simulator.</p>
+<p></p><div class="highlight"><pre><span></span><code>../AWSIM_v1.1.0_F1TENTH/AWSIM_F1TENTH.x86_64
+</code></pre></div>
+4. Launch the Autoware.
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>launch<span class="w"> </span>f1tenth_launch<span class="w"> </span>f1tenth.launch.py
+</code></pre></div>
+</li>
+<li>
+<p>Once you see the RVIZ window with the map loaded, trigger the localization node.</p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>service<span class="w"> </span>call<span class="w"> </span>/localization/trigger_node<span class="w"> </span>std_srvs/srv/SetBool<span class="w"> </span><span class="s2">"{data: true}"</span>
+</code></pre></div>
+</li>
+</ol>
+<p>Done! Steps 1 and 2 need to be done only once, after the container is created. Step 3 when you want to reset the position of the vehicle. Steps 4 and 5 each time you have made changes to the code. You can terminate the simulation by pressing <code>Ctrl+C</code> in the terminal window where you launched the simulator and same for F1TENTH launch.</p>
+<h2 id="planning">Planning<a class="headerlink" href="#planning" title="Permanent link">#</a></h2>
+<p>The Autoware Planning component consists of multiple modules responsible for different tasks. In short, these packages handle vehicle behaviors and generate suitable trajectories for current vehicle ego state and environment. For more information about the Planning component, please refer to the <a href="../../../design/autoware-architecture/planning/">Planning architecture</a>. Autonomous racing is a use case with very specific requirements, so reusing the existing component is not best idea in order to achieve the best performance. Instead, we can just few modules from Autoware and combine them with custom ones to achieve the desired behavior. </p>
+<h3 id="free-space-planner">Free space planner<a class="headerlink" href="#free-space-planner" title="Permanent link">#</a></h3>
+<p>One of worth noting module is the <a href="https://autowarefoundation.github.io/autoware.universe/main/planning/freespace_planner/">Free Space Planner</a>. Based on occupancy grid and given path search algorithm, it generates a set of waypoints formed under defined constraints. By stack concept, it is used as a parking planner but it can be adapted to custom scenarios as well. Currently, two algorithms are supported: A* and RRT*.</p>
+<h4 id="task">Task<a class="headerlink" href="#task" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p>Launch the simulator.</p>
+<div class="highlight"><pre><span></span><code>../AWSIM_v1.1.0_F1TENTH/AWSIM_F1TENTH.x86_64
+</code></pre></div>
+</li>
+<li>
+<p>Launch the Autoware.</p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>launch<span class="w"> </span>f1tenth_launch<span class="w"> </span>f1tenth.launch.py
+</code></pre></div>
+</li>
+<li>
+<p>Trigger the localization node.</p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>service<span class="w"> </span>call<span class="w"> </span>/localization/trigger_node<span class="w"> </span>std_srvs/srv/SetBool<span class="w"> </span><span class="s2">"{data: true}"</span>
+</code></pre></div>
+</li>
+<li>
+<p>Select the 2D Nav Goal tool in RVIZ on the top bar and click on the map to set the goal position. Ensure correct orientation. When you see the trajectory, click AUTO button from Autoware State Panel to start the vehicle motion. Vehicle should follow the trajectory and stop at the goal position.</p>
+</li>
+<li>
+<p>Modify the Free Space Planner and A* parameters in order to get more aggressive trajectory. The config is located in <code>autoware/src/launcher/external/f1tenth_launch/config/planning/freespace_planner.param.yaml</code>. To fully understand the parameters, please refer to the <a href="https://autowarefoundation.github.io/autoware.universe/main/planning/freespace_planner/">documentation</a>. Basic knowledge of inner workings algorithms is required as well. Repeat steps 1-4 and test the new configuration.</p>
+</li>
+<li>
+<p>In same config file change <code>planning_algorithm</code> to <code>rrtstar</code>. Check the different parameter values as well. Repeat steps 1-4 and test the new configuration.</p>
+</li>
+</ol>
+<p><div class="video-container"><iframe src="https://www.youtube.com/embed/LtObbLfJzm0" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Updating the parameters requires restarting the Autoware launch. Restarting the simulator is not necessary but it is recommended to reset the vehicle position. Otherwise you need to set the initial pose manually with the 2D Pose Estimate tool in RVIZ. Do not forget to trigger the localization node again.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Workspace built with <code>--symlink-install</code> does not require building the package after modifying the config and launch files.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to the fact that Autoware volume is mapped in the container, you can edit the files directly via any text editor on the host machine.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For higher vehicle velocity and low machine performance, the simulation time can be slowed down using the slider at the bottom of the simulator window. </p>
+</div>
+<h3 id="static-planners">Static planners<a class="headerlink" href="#static-planners" title="Permanent link">#</a></h3>
+<p>Moving on to autonomous racing and its nature, the required effort for generating optimal race trajectory for a well defined (already mapped) environment could be done offline. In this case, developers are not limited by the real-time constraints and can use more complex algorithms. Indeed, challenging with opponents on track would need possible handling of additional behaviors like overtaking, slowing down behind the opponent (or no) and so on but this is a good starting point. For demonstration purposes, the race trajectory was generated by <a href="https://github.com/TUMFTM/global_racetrajectory_optimization">global racetrajectory optimization</a>.</p>
+<h4 id="task_1">Task<a class="headerlink" href="#task_1" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p>Launch the simulator.</p>
+<div class="highlight"><pre><span></span><code>../AWSIM_v1.1.0_F1TENTH/AWSIM_F1TENTH.x86_64
+</code></pre></div>
+</li>
+<li>
+<p>Launch the Autoware.</p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>launch<span class="w"> </span>f1tenth_launch<span class="w"> </span>f1tenth.launch.py<span class="w"> </span>use_trajectory_loader:<span class="o">=</span>True
+</code></pre></div>
+</li>
+<li>
+<p>Trigger the localization node.</p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>service<span class="w"> </span>call<span class="w"> </span>/localization/trigger_node<span class="w"> </span>std_srvs/srv/SetBool<span class="w"> </span><span class="s2">"{data: true}"</span>
+</code></pre></div>
+</li>
+<li>
+<p>Select the 2D Nav Goal tool in RVIZ on the top bar and click on the map anywhere between the track boundaries, just to select a lane. When the lane is focused, click AUTO button from Autoware State Panel to start the vehicle motion.</p>
+</li>
+</ol>
+<p><div class="video-container"><iframe src="https://www.youtube.com/embed/rj7HJB9bPcE" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+<h2 id="control">Control<a class="headerlink" href="#control" title="Permanent link">#</a></h2>
+<p>Next to the planners, the Control component stands for taking given trajectory and generating the control commands for the vehicle. For more information about the Control component, please refer to the <a href="../../../design/autoware-architecture/control/">Control architecture</a>. These modules can be used as they are with tiny touch of tuning the parameters.</p>
+<h3 id="model-predictive-control">Model Predictive Control<a class="headerlink" href="#model-predictive-control" title="Permanent link">#</a></h3>
+<p>Do the recent trajectory affects unstable vehicle motion? The controller might need to be tuned.</p>
+<h4 id="task_2">Task<a class="headerlink" href="#task_2" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p>Modify the MPC parameters in order to get more stable behavior. The config is located in <code>autoware/src/launcher/external/f1tenth_launch/config/control/trajectory_follower/lateral/mpc.param.yaml</code>. To fully understand the parameters, please refer to the <a href="https://autowarefoundation.github.io/autoware.universe/main/control/mpc_lateral_controller/">documentation</a>. Basic knowledge of inner workings algorithms is required as well.</p>
+</li>
+<li>
+<p>Launch the simulator.</p>
+<div class="highlight"><pre><span></span><code>../AWSIM_v1.1.0_F1TENTH/AWSIM_F1TENTH.x86_64
+</code></pre></div>
+</li>
+<li>
+<p>Launch the Autoware.</p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>launch<span class="w"> </span>f1tenth_launch<span class="w"> </span>f1tenth.launch.py<span class="w"> </span>use_trajectory_loader:<span class="o">=</span>True
+</code></pre></div>
+</li>
+<li>
+<p>Trigger the localization node.</p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>service<span class="w"> </span>call<span class="w"> </span>/localization/trigger_node<span class="w"> </span>std_srvs/srv/SetBool<span class="w"> </span><span class="s2">"{data: true}"</span>
+</code></pre></div>
+</li>
+<li>
+<p>Select the 2D Nav Goal tool in RVIZ on the top bar and click on the map anywhere between the track boundaries, just to select a lane. When the lane is focused, click AUTO button from Autoware State Panel to start the vehicle motion.</p>
+</li>
+<li>
+<p>Repeat steps 1-5 in order to find the best parameters.</p>
+</li>
+</ol>
+<h3 id="pure-pursuit">Pure Pursuit<a class="headerlink" href="#pure-pursuit" title="Permanent link">#</a></h3>
+<p>The second option, fortunately with a lower entry threshold. To start working with the Pure Pursuit controller, a change in launch file will be necessary. Open the top-level launch file <code>autoware/src/launcher/external/f1tenth_launch/launch/f1tenth.launch.py</code>, find <code>lateral_controller_mode</code> within <code>control_launch</code> module and change its value to <code>pure_pursuit</code>.</p>
+<h4 id="task_3">Task<a class="headerlink" href="#task_3" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p>Launch the simulator.</p>
+<div class="highlight"><pre><span></span><code>../AWSIM_v1.1.0_F1TENTH/AWSIM_F1TENTH.x86_64
+</code></pre></div>
+</li>
+<li>
+<p>Launch the Autoware.</p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>launch<span class="w"> </span>f1tenth_launch<span class="w"> </span>f1tenth.launch.py<span class="w"> </span>use_trajectory_loader:<span class="o">=</span>True
+</code></pre></div>
+</li>
+<li>
+<p>Trigger the localization node.</p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>service<span class="w"> </span>call<span class="w"> </span>/localization/trigger_node<span class="w"> </span>std_srvs/srv/SetBool<span class="w"> </span><span class="s2">"{data: true}"</span>
+</code></pre></div>
+</li>
+<li>
+<p>Select the 2D Nav Goal tool in RVIZ on the top bar and click on the map anywhere between the track boundaries, just to select a lane. When the lane is focused, click AUTO button from Autoware State Panel to start the vehicle motion.</p>
+</li>
+<li>
+<p>Modify the Pure Pursuit parameters in order to get more stable behavior. The config is located in <code>autoware/src/launcher/external/f1tenth_launch/config/control/trajectory_follower/lateral/pure_pursuit.param.yaml</code>. Repeat steps 1-4 in order to find the best parameters.</p>
+</li>
+</ol>
 <!-- prettier-ignore --></div>
 
 
