@@ -47,7 +47,7 @@ Done! Steps 1 and 2 need to be done only once, after the container is created. S
 
 ## Planning
 
-The Autoware Planning component consists of multiple modules responsible for different tasks. In short, these packages handle vehicle behaviors and generate suitable trajectories for current vehicle ego state and environment. For more information about the Planning component, please refer to the [Planning architecture](../../../design/autoware-architecture/planning/). Autonomous racing is a use case with very specific requirements, so reusing the existing component is not best idea in order to achieve the best performance. Instead, we can just few modules from Autoware and combine them with custom ones to achieve the desired behavior. 
+The Autoware Planning component consists of multiple modules responsible for different tasks. In short, these packages handle vehicle behaviors and generate suitable trajectories for current vehicle ego state and environment. For more information about the Planning component, please refer to the [Planning architecture](../../../design/autoware-architecture/planning/). Autonomous racing is a use case with very specific requirements, so reusing the existing component is not best idea in order to achieve the best performance. Instead, we can just take few modules from Autoware and combine them with custom ones to achieve the desired behavior. 
 
 ### Free space planner
 
