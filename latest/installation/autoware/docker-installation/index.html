@@ -21,7 +21,7 @@
     
     
       
-        <title>Docker installation - Autoware Documentation</title>
+        <title>Open AD Kit: containerized workloads for Autoware - Autoware Documentation</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker-installation" class="md-skip">
+        <a href="#open-ad-kit-containerized-workloads-for-autoware" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker installation
+              Open AD Kit: containerized workloads for Autoware
             
           </span>
         </div>
@@ -548,12 +548,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Docker installation
+          Open AD Kit: containerized workloads for Autoware
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Docker installation
+        Open AD Kit: containerized workloads for Autoware
       </a>
       
         
@@ -572,37 +572,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker-installation-for-quick-start" class="md-nav__link">
-    Docker installation for quick start
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-installation-for-development" class="md-nav__link">
-    Docker installation for development
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    Troubleshooting
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
+    <nav class="md-nav" aria-label="Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cuda-error-forward-compatibility-was-attempted-on-non-supported-hw" class="md-nav__link">
-    cuda error: forward compatibility was attempted on non supported hw
+  <a href="#runtime-setup" class="md-nav__link">
+    Runtime setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker-with-nvidia-gpu-fails-to-start-autoware-on-arm64-devices" class="md-nav__link">
-    Docker with NVIDIA gpu fails to start Autoware on arm64 devices
+  <a href="#development-setup" class="md-nav__link">
+    Development setup
   </a>
   
 </li>
@@ -613,16 +606,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
-    Tips
+  <a href="#building-docker-images-from-scratch" class="md-nav__link">
+    Building Docker images from scratch
   </a>
   
-    <nav class="md-nav" aria-label="Tips">
+    <nav class="md-nav" aria-label="Building Docker images from scratch">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#non-native-arm64-system" class="md-nav__link">
-    Non-native arm64 System
+  <a href="#using-docker-images-other-than-latest" class="md-nav__link">
+    Using Docker images other than latest
   </a>
   
 </li>
@@ -913,6 +906,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
@@ -949,6 +944,20 @@
     <li class="md-nav__item">
       <a href="../../../tutorials/ad-hoc-simulation/digital-twin-simulation/MORAI_Sim-tutorial/" class="md-nav__link">
         MORAI Sim: Drive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/ad-hoc-simulation/digital-twin-simulation/carla-tutorial/" class="md-nav__link">
+        CARLA simulator
       </a>
     </li>
   
@@ -4292,8 +4301,59 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-architecture/sensing/data-types/radar-data/" class="md-nav__link">
-        Radar data pre-processing design
+      <a href="../../../design/autoware-architecture/sensing/data-types/ultrasonics-data/" class="md-nav__link">
+        Ultrasonics data pre-processing design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3_2_2_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_2_2_5" id="__nav_5_3_2_2_5_label" tabindex="0">
+          Radar data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_3_2_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Radar data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/sensing/data-types/radar-data/radar-objects-data/" class="md-nav__link">
+        Radar objects data pre-processing design
       </a>
     </li>
   
@@ -4306,9 +4366,86 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-architecture/sensing/data-types/ultrasonics-data/" class="md-nav__link">
-        Ultrasonics data pre-processing design
+      <a href="../../../design/autoware-architecture/sensing/data-types/radar-data/radar-pointcloud-data/" class="md-nav__link">
+        Radar pointcloud data pre-processing design
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3_2_2_5_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_2_2_5_3" id="__nav_5_3_2_2_5_3_label" tabindex="0">
+          Reference implementations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_5_3_2_2_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3_2_2_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference implementations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/sensing/data-types/radar-data/reference-implementations/data-message/" class="md-nav__link">
+        Data message for radars
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/sensing/data-types/radar-data/reference-implementations/device-driver/" class="md-nav__link">
+        Device driver for radars
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -4443,6 +4580,8 @@
         
           
         
+          
+        
       
       
         
@@ -4474,6 +4613,116 @@
       <a href="../../../design/autoware-architecture/perception/reference_implementation/" class="md-nav__link">
         Perception Component Reference Implementation Design
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3_5_3" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_5_3" id="__nav_5_3_5_3_label" tabindex="0">
+          Reference implementations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_3_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference implementations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3_5_3_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_5_3_1" id="__nav_5_3_5_3_1_label" tabindex="0">
+          Radar based 3d detector
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_3_5_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3_5_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Radar based 3d detector
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/perception/reference-implementations/radar-based-3d-detector/faraway-object-detection/" class="md-nav__link">
+        Radar faraway dynamic objects detection with radar objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/perception/reference-implementations/radar-based-3d-detector/radar-based-3d-detector/" class="md-nav__link">
+        Radar based 3D detector
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -4753,6 +5002,8 @@
         
           
         
+          
+        
       
       
         
@@ -4780,6 +5031,20 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-interfaces/ad-api/release/" class="md-nav__link">
+        Release notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -4788,7 +5053,99 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_2_2" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_2_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../design/autoware-interfaces/ad-api/list/">List</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          List
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_2_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../design/autoware-interfaces/ad-api/types/">Types</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Types
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_2_5" >
       
       
         
@@ -4814,15 +5171,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_2_2" id="__nav_5_4_2_2_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_5_4_2_5" id="__nav_5_4_2_5_label" tabindex="0">
           Features
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_2_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5_4_2_2">
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4_2_5">
           <span class="md-nav__icon md-icon"></span>
           Features
         </label>
@@ -4850,6 +5209,20 @@
     <li class="md-nav__item">
       <a href="../../../design/autoware-interfaces/ad-api/features/fail-safe/" class="md-nav__link">
         Fail-safe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-interfaces/ad-api/features/heartbeat/" class="md-nav__link">
+        Heartbeat
       </a>
     </li>
   
@@ -4980,98 +5353,6 @@
     </li>
   
 
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_2_3" >
-      
-      
-        
-          
-            
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-interfaces/ad-api/list/">List</a>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_2_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5_4_2_3">
-          <span class="md-nav__icon md-icon"></span>
-          List
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_2_4" >
-      
-      
-        
-          
-            
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-interfaces/ad-api/types/">Types</a>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_2_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5_4_2_4">
-          <span class="md-nav__icon md-icon"></span>
-          Types
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
             
           
         </ul>
@@ -6704,37 +6985,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker-installation-for-quick-start" class="md-nav__link">
-    Docker installation for quick start
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-installation-for-development" class="md-nav__link">
-    Docker installation for development
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    Troubleshooting
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
+    <nav class="md-nav" aria-label="Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cuda-error-forward-compatibility-was-attempted-on-non-supported-hw" class="md-nav__link">
-    cuda error: forward compatibility was attempted on non supported hw
+  <a href="#runtime-setup" class="md-nav__link">
+    Runtime setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker-with-nvidia-gpu-fails-to-start-autoware-on-arm64-devices" class="md-nav__link">
-    Docker with NVIDIA gpu fails to start Autoware on arm64 devices
+  <a href="#development-setup" class="md-nav__link">
+    Development setup
   </a>
   
 </li>
@@ -6745,16 +7019,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
-    Tips
+  <a href="#building-docker-images-from-scratch" class="md-nav__link">
+    Building Docker images from scratch
   </a>
   
-    <nav class="md-nav" aria-label="Tips">
+    <nav class="md-nav" aria-label="Building Docker images from scratch">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#non-native-arm64-system" class="md-nav__link">
-    Non-native arm64 System
+  <a href="#using-docker-images-other-than-latest" class="md-nav__link">
+    Using Docker images other than latest
   </a>
   
 </li>
@@ -6782,77 +7056,111 @@
   
 
 
-<div><h1 id="docker-installation">Docker installation<a class="headerlink" href="#docker-installation" title="Permanent link">#</a></h1>
+<div><h1 id="open-ad-kit-containerized-workloads-for-autoware">Open AD Kit: containerized workloads for Autoware<a class="headerlink" href="#open-ad-kit-containerized-workloads-for-autoware" title="Permanent link">#</a></h1>
+<p>Open AD Kit offers two types of Docker image to let you get started with Autoware quickly: <code>devel</code> and <code>runtime</code>.</p>
+<ol>
+<li>The <code>devel</code> image enables you to develop Autoware without setting up the local development environment.</li>
+<li>The <code>runtime</code> image contains only runtime executables and enables you to try out Autoware quickly.</li>
+</ol>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Since this page explains Docker-specific information, it is recommended to see <a href="../source-installation/">Source installation</a> as well if you need detailed information.</p>
+<p>Before proceeding, confirm and agree with the <a href="https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license">NVIDIA Deep Learning Container license</a>. By pulling and using the Autoware Open AD Kit images, you accept the terms and conditions of the license.</p>
 </div>
-<p>Here are two ways to install Autoware by docker:</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>The first way is to start Autoware with <code>prebuilt image</code>, this is a quick start, this way you can only run Autoware simulator and not develop Autoware, it is only suitable for beginners</li>
+<li>Docker</li>
+<li>NVIDIA Container Toolkit (preferred)</li>
+<li>NVIDIA CUDA 12 compatible <abbr title="Graphics Processing Unit">GPU</abbr> Driver (preferred)</li>
 </ul>
-<ul>
-<li>The second way is to start Autoware with <code>devel image</code>, which supports developing and running Autoware using docker</li>
-</ul>
-<h2 id="docker-installation-for-quick-start">Docker installation for quick start<a class="headerlink" href="#docker-installation-for-quick-start" title="Permanent link">#</a></h2>
-<p><a href="../docker-installation-prebuilt/">docker installation for quick start</a></p>
-<p><div class="video-container"><iframe src="https://youtube.com/embed/3KUhEFkEbI8" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
-<h2 id="docker-installation-for-development">Docker installation for development<a class="headerlink" href="#docker-installation-for-development" title="Permanent link">#</a></h2>
-<p><a href="../docker-installation-devel/">docker installation for development</a></p>
-<p><div class="video-container"><iframe src="https://youtube.com/embed/UrSF-VwncGQ" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
-<p>Here are solutions for a few specific errors:</p>
-<h3 id="cuda-error-forward-compatibility-was-attempted-on-non-supported-hw">cuda error: forward compatibility was attempted on non supported hw<a class="headerlink" href="#cuda-error-forward-compatibility-was-attempted-on-non-supported-hw" title="Permanent link">#</a></h3>
-<p>When starting Docker with <abbr title="Graphics Processing Unit">GPU</abbr> support enabled for NVIDIA graphics, you may sometimes receive the following error:</p>
-<div class="highlight"><pre><span></span><code>docker:<span class="w"> </span>Error<span class="w"> </span>response<span class="w"> </span>from<span class="w"> </span>daemon:<span class="w"> </span>OCI<span class="w"> </span>runtime<span class="w"> </span>create<span class="w"> </span>failed:<span class="w"> </span>container_linux.go:349:<span class="w"> </span>starting<span class="w"> </span>container<span class="w"> </span>process<span class="w"> </span>caused<span class="w"> </span><span class="s2">"process_linux.go:449: container init caused \"process_linux.go:432: running prestart hook 0 caused \\\"error running hook: exit status 1, stdout: , stderr: nvidia-container-cli: initialization error: cuda error: forward compatibility was attempted on non supported hw\\\\n\\\"\""</span>:<span class="w"> </span>unknown.
-ERROR:<span class="w"> </span>Command<span class="w"> </span><span class="k">return</span><span class="w"> </span>non-zero<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>code<span class="w"> </span><span class="o">(</span>see<span class="w"> </span>above<span class="o">)</span>:<span class="w"> </span><span class="m">125</span>
+<p>The <a href="https://github.com/autowarefoundation/autoware/blob/main/setup-dev-env.sh">setup script</a> will install all required dependencies with the setup script:</p>
+<div class="highlight"><pre><span></span><code>./setup-dev-env.sh<span class="w"> </span>-y<span class="w"> </span>docker
 </code></pre></div>
-<p>This usually indicates that a new NVIDIA graphics driver has been installed (usually via <code>apt</code>) but the system has not yet been restarted. A similar message may appear if the graphics driver is not available, for example because of resuming after suspend.</p>
-<p>To fix this, restart your system after installing the new NVIDIA driver.</p>
-<h3 id="docker-with-nvidia-gpu-fails-to-start-autoware-on-arm64-devices">Docker with NVIDIA gpu fails to start Autoware on arm64 devices<a class="headerlink" href="#docker-with-nvidia-gpu-fails-to-start-autoware-on-arm64-devices" title="Permanent link">#</a></h3>
-<p>When starting Docker with <abbr title="Graphics Processing Unit">GPU</abbr> support enabled for NVIDIA graphics on arm64 devices, e.g. NVIDIA jetson AGX xavier, you may receive the following error:</p>
-<div class="highlight"><pre><span></span><code>nvidia@xavier:~$<span class="w"> </span>rocker<span class="w"> </span>--nvidia<span class="w"> </span>--x11<span class="w"> </span>--user<span class="w"> </span>--volume<span class="w"> </span><span class="nv">$HOME</span>/autoware<span class="w"> </span>--<span class="w"> </span>ghcr.io/autowarefoundation/autoware-universe:humble-latest-cuda-arm64
-...
-
-Collecting<span class="w"> </span><span class="nv">staticx</span><span class="o">==</span><span class="m">0</span>.12.3
-Downloading<span class="w"> </span>https://files.pythonhosted.org/packages/92/ff/d9960ea1f9db48d6044a24ee0f3d78d07bcaddf96eb0c0e8806f941fb7d3/staticx-0.12.3.tar.gz<span class="w"> </span><span class="o">(</span>68kB<span class="o">)</span>
-Complete<span class="w"> </span>output<span class="w"> </span>from<span class="w"> </span><span class="nb">command</span><span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>egg_info:
-Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
-File<span class="w"> </span><span class="s2">""</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="k">in</span>
-File<span class="w"> </span><span class="s2">"/tmp/pip-install-m_nm8mya/staticx/setup.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">4</span>,<span class="w"> </span><span class="k">in</span>
-from<span class="w"> </span>wheel.bdist_wheel<span class="w"> </span>import<span class="w"> </span>bdist_wheel
-ModuleNotFoundError:<span class="w"> </span>No<span class="w"> </span>module<span class="w"> </span>named<span class="w"> </span><span class="s1">'wheel'</span>
-
-Command<span class="w"> </span><span class="s2">"python setup.py egg_info"</span><span class="w"> </span>failed<span class="w"> </span>with<span class="w"> </span>error<span class="w"> </span>code<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>/tmp/pip-install-m_nm8mya/staticx/
-...
+<p>To install without <strong>NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr></strong> support:</p>
+<div class="highlight"><pre><span></span><code>./setup-dev-env.sh<span class="w"> </span>-y<span class="w"> </span>--no-nvidia<span class="w"> </span>docker
 </code></pre></div>
-<p>This error exists in current version of rocker tool, which relates to the os_detection function of rocker.</p>
-<p>To fix this error, temporary modification of rocker source code is required, which is not recommended.</p>
-<p>At current stage, it is recommended to run docker without NVIDIA gpu enabled for arm64 devices:</p>
-<div class="highlight"><pre><span></span><code>rocker<span class="w"> </span>-e<span class="w"> </span><span class="nv">LIBGL_ALWAYS_SOFTWARE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>--x11<span class="w"> </span>--user<span class="w"> </span>--volume<span class="w"> </span><span class="nv">$HOME</span>/autoware<span class="w"> </span>--<span class="w"> </span>ghcr.io/autowarefoundation/autoware-universe:latest-cuda
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><abbr title="Graphics Processing Unit">GPU</abbr> acceleration is required for some features such as object detection and traffic light detection/classification. For details of how to enable these features without a <abbr title="Graphics Processing Unit">GPU</abbr>, refer to the <a href="../../../how-to-guides/others/running-autoware-without-cuda/">Running Autoware without CUDA</a>.</p>
+</div>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
+<h3 id="runtime-setup">Runtime setup<a class="headerlink" href="#runtime-setup" title="Permanent link">#</a></h3>
+<p>You can use <code>run.sh</code> to run the Autoware runtime container with the map data:</p>
+<div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--map-path<span class="w"> </span>path_to_map_data
 </code></pre></div>
-<p>This tutorial will be updated after official fix from rocker.</p>
-<h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">#</a></h2>
-<h3 id="non-native-arm64-system">Non-native arm64 System<a class="headerlink" href="#non-native-arm64-system" title="Permanent link">#</a></h3>
-<p>This section describes a process to run <code>arm64</code> systems on <code>amd64</code> systems using <a href="https://github.com/multiarch/qemu-user-static"><code>qemu-user-static</code></a>.</p>
-<p>Initially, your system is usually incompatible with <code>arm64</code> systems.
-To check that:</p>
-<div class="highlight"><pre><span></span><code>$ docker run --rm -t arm64v8/ubuntu uname -m
-WARNING: The requested image's platform (linux/arm64/v8) does not match the detected host platform (linux/amd64) and no specific platform was requested
-standard_init_linux.go:228: exec user process caused: exec format error
+<p>For more launch options, you can append a custom launch command instead of using the default launch command <code>ros2 launch autoware_launch autoware.launch.xml</code>:</p>
+<div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--map-path<span class="w"> </span>path_to_map_data<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>autoware_launch<span class="w"> </span>autoware.launch.xml<span class="w"> </span>map_path:<span class="o">=</span>/autoware_map<span class="w"> </span>vehicle_model:<span class="o">=</span>sample_vehicle<span class="w"> </span>sensor_model:<span class="o">=</span>sample_sensor_kit
 </code></pre></div>
-<p>Installing <code>qemu-user-static</code> enables us to run <code>arm64</code> images on <code>amd64</code> systems.</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt-get install qemu-user-static
-$ docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-$ docker run --rm -t arm64v8/ubuntu uname -m
-WARNING: The requested image's platform (linux/arm64/v8) does not match the detected host platform (linux/amd64) and no specific platform was requested
-aarch64
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You can use <code>--no-nvidia</code> to run without NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr> support, and <code>--headless</code> to run without display that means no RViz visualization.</p>
+</div>
+<h4 id="run-the-autoware-tutorials">Run the Autoware tutorials<a class="headerlink" href="#run-the-autoware-tutorials" title="Permanent link">#</a></h4>
+<p>Inside the container, you can run the Autoware tutorials by following these links:</p>
+<p><a href="../../../tutorials/ad-hoc-simulation/planning-simulation/">Planning Simulation</a></p>
+<p><a href="../../../tutorials/ad-hoc-simulation/rosbag-replay-simulation/">Rosbag Replay Simulation</a>.</p>
+<h3 id="development-setup">Development setup<a class="headerlink" href="#development-setup" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--devel
 </code></pre></div>
-<p>To run Autoware's Docker images of <code>arm64</code> architecture, add the suffix <code>-arm64</code>.</p>
-<div class="highlight"><pre><span></span><code>$ docker run --rm -it ghcr.io/autowarefoundation/autoware-universe:humble-latest-cuda-arm64
-WARNING: The requested image's platform (linux/arm64) does not match the detected host platform (linux/amd64) and no specific platform was requested
-root@5b71391ad50f:/autoware#
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>By default workspace mounted on the container will be current directory, you can change the workspace path by <code>--workspace path_to_workspace</code>. For development environments without NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr> support use <code>--no-nvidia</code>.</p>
+</div>
+<h4 id="how-to-set-up-a-workspace">How to set up a workspace<a class="headerlink" href="#how-to-set-up-a-workspace" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p>Create the <code>src</code> directory and clone repositories into it.</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>src
+vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware.repos
 </code></pre></div>
+</li>
+<li>
+<p>Update dependent <abbr title="Robot Operating System">ROS</abbr> packages.</p>
+<p>The dependency of Autoware may change after the Docker image was created.
+ In that case, you need to run the following commands to update the dependency.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+rosdep<span class="w"> </span>update
+rosdep<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>--rosdistro<span class="w"> </span><span class="nv">$ROS_DISTRO</span>
+</code></pre></div>
+</li>
+<li>
+<p>Build the workspace.</p>
+<div class="highlight"><pre><span></span><code>colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install<span class="w"> </span>--cmake-args<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
+</code></pre></div>
+<p>If there is any build issue, refer to <a href="../../../support/troubleshooting/#build-issues">Troubleshooting</a>.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>To Update the Workspace</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>autoware
+git<span class="w"> </span>pull
+vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware.repos
+vcs<span class="w"> </span>pull<span class="w"> </span>src
+</code></pre></div>
+</blockquote>
+<h4 id="using-vs-code-remote-containers-for-development">Using VS Code remote containers for development<a class="headerlink" href="#using-vs-code-remote-containers-for-development" title="Permanent link">#</a></h4>
+<p>Using the <a href="https://code.visualstudio.com/">Visual Studio Code</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension, you can develop Autoware in the containerized environment with ease.</p>
+<p>Get the Visual Studio Code's <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension.
+And reopen the workspace in the container by selecting <code>Remote-Containers: Reopen in Container</code> from the Command Palette (<code>F1</code>).</p>
+<p>You can choose Autoware or Autoware-cuda image to develop with or without CUDA support.</p>
+<h2 id="building-docker-images-from-scratch">Building Docker images from scratch<a class="headerlink" href="#building-docker-images-from-scratch" title="Permanent link">#</a></h2>
+<p>If you want to build these images locally for development purposes, run the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>autoware/
+./docker/build.sh
+</code></pre></div>
+<p>To build without CUDA, use the <code>--no-cuda</code> option:</p>
+<div class="highlight"><pre><span></span><code>./docker/build.sh<span class="w"> </span>--no-cuda
+</code></pre></div>
+<p>To build only development image, use the <code>--devel-only</code> option:</p>
+<div class="highlight"><pre><span></span><code>./docker/build.sh<span class="w"> </span>--devel-only
+</code></pre></div>
+<p>To specify the platform, use the <code>--platform</code> option:</p>
+<div class="highlight"><pre><span></span><code>./docker/build.sh<span class="w"> </span>--platform<span class="w"> </span>linux/amd64
+./docker/build.sh<span class="w"> </span>--platform<span class="w"> </span>linux/arm64
+</code></pre></div>
+<h3 id="using-docker-images-other-than-latest">Using Docker images other than <code>latest</code><a class="headerlink" href="#using-docker-images-other-than-latest" title="Permanent link">#</a></h3>
+<p>There are also images versioned based on the <code>date</code> or <code>release tag</code>.<br>
+Use them when you need a fixed version of the image.</p>
+<p>The list of versions can be found <a href="https://github.com/autowarefoundation/autoware/packages">here</a>.</p>
 <!-- prettier-ignore --></div>
 
 
