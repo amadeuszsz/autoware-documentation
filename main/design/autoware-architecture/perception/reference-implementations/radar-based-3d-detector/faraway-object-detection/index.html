@@ -8,27 +8,27 @@
       
       
       
-        <link rel="canonical" href="https://autowarefoundation.github.io/autoware-documentation/main/installation/autoware/docker-installation-devel/">
+        <link rel="canonical" href="https://autowarefoundation.github.io/autoware-documentation/main/design/autoware-architecture/perception/reference-implementations/radar-based-3d-detector/faraway-object-detection/">
       
       
-        <link rel="prev" href="../../additional-settings-for-developers/">
+        <link rel="prev" href="../../../reference_implementation/">
       
       
-        <link rel="next" href="../docker-installation-prebuilt/">
+        <link rel="next" href="../radar-based-3d-detector/">
       
-      <link rel="icon" href="../../../assets/images/autoware-foundation.png">
+      <link rel="icon" href="../../../../../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
-        <title>Docker installation for development - Autoware Documentation</title>
+        <title>Radar faraway dynamic objects detection with radar objects - Autoware Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -44,11 +44,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/css/extra.css">
+      <link rel="stylesheet" href="../../../../../../assets/css/extra.css">
     
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker-installation-for-development" class="md-skip">
+        <a href="#radar-faraway-dynamic-objects-detection-with-radar-objects" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Autoware Documentation" class="md-header__button md-logo" aria-label="Autoware Documentation" data-md-component="logo">
+    <a href="../../../../../.." title="Autoware Documentation" class="md-header__button md-logo" aria-label="Autoware Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0-64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker installation for development
+              Radar faraway dynamic objects detection with radar objects
             
           </span>
         </div>
@@ -211,7 +211,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../../../.." class="md-tabs__link">
       Introduction
     </a>
   </li>
@@ -220,15 +220,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../../../../installation/" class="md-tabs__link">
         Installation
       </a>
     </li>
@@ -244,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tutorials/" class="md-tabs__link">
+      <a href="../../../../../../tutorials/" class="md-tabs__link">
         Tutorials
       </a>
     </li>
@@ -260,7 +258,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../how-to-guides/" class="md-tabs__link">
+      <a href="../../../../../../how-to-guides/" class="md-tabs__link">
         How to guides
       </a>
     </li>
@@ -270,13 +268,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../design/" class="md-tabs__link">
+      <a href="../../../../../" class="md-tabs__link md-tabs__link--active">
         Design
       </a>
     </li>
@@ -292,7 +292,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../reference-hw/" class="md-tabs__link">
+      <a href="../../../../../../reference-hw/" class="md-tabs__link">
         Reference HW
       </a>
     </li>
@@ -308,7 +308,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../contributing/" class="md-tabs__link">
+      <a href="../../../../../../contributing/" class="md-tabs__link">
         Contributing
       </a>
     </li>
@@ -324,7 +324,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../datasets/" class="md-tabs__link">
+      <a href="../../../../../../datasets/" class="md-tabs__link">
         Datasets
       </a>
     </li>
@@ -340,7 +340,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../models/" class="md-tabs__link">
+      <a href="../../../../../../models/" class="md-tabs__link">
         Models
       </a>
     </li>
@@ -356,7 +356,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../support/" class="md-tabs__link">
+      <a href="../../../../../../support/" class="md-tabs__link">
         Support
       </a>
     </li>
@@ -372,7 +372,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../autoware-competitions/" class="md-tabs__link">
+      <a href="../../../../../../autoware-competitions/" class="md-tabs__link">
         Competitions
       </a>
     </li>
@@ -406,7 +406,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Autoware Documentation" class="md-nav__button md-logo" aria-label="Autoware Documentation" data-md-component="logo">
+    <a href="../../../../../.." title="Autoware Documentation" class="md-nav__button md-logo" aria-label="Autoware Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0-64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
@@ -437,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../../../.." class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -450,16 +450,16 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
       
       
         
@@ -478,7 +478,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Installation</a>
+          <a href="../../../../../../installation/">Installation</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -486,7 +486,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Installation
@@ -499,18 +499,18 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
       
       
         
@@ -525,7 +525,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           Autoware
@@ -538,8 +538,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker-installation/" class="md-nav__link">
-        Docker installation
+      <a href="../../../../../../installation/autoware/docker-installation/" class="md-nav__link">
+        Open AD Kit: containerized workloads for Autoware
       </a>
     </li>
   
@@ -552,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../source-installation/" class="md-nav__link">
+      <a href="../../../../../../installation/autoware/source-installation/" class="md-nav__link">
         Source installation
       </a>
     </li>
@@ -595,7 +595,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../related-tools/">Related tools</a>
+          <a href="../../../../../../installation/related-tools/">Related tools</a>
           
         </div>
       
@@ -643,7 +643,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../additional-settings-for-developers/">Additional settings for developers</a>
+          <a href="../../../../../../installation/additional-settings-for-developers/">Additional settings for developers</a>
           
         </div>
       
@@ -701,7 +701,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tutorials/">Tutorials</a>
+          <a href="../../../../../../tutorials/">Tutorials</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -752,7 +752,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tutorials/ad-hoc-simulation/">Ad hoc simulation</a>
+          <a href="../../../../../../tutorials/ad-hoc-simulation/">Ad hoc simulation</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -775,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/ad-hoc-simulation/planning-simulation/" class="md-nav__link">
+      <a href="../../../../../../tutorials/ad-hoc-simulation/planning-simulation/" class="md-nav__link">
         Planning simulation
       </a>
     </li>
@@ -789,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/ad-hoc-simulation/rosbag-replay-simulation/" class="md-nav__link">
+      <a href="../../../../../../tutorials/ad-hoc-simulation/rosbag-replay-simulation/" class="md-nav__link">
         Rosbag replay simulation
       </a>
     </li>
@@ -818,6 +818,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
@@ -838,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/ad-hoc-simulation/digital-twin-simulation/awsim-tutorial/" class="md-nav__link">
+      <a href="../../../../../../tutorials/ad-hoc-simulation/digital-twin-simulation/awsim-tutorial/" class="md-nav__link">
         AWSIM simulator
       </a>
     </li>
@@ -852,8 +854,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/ad-hoc-simulation/digital-twin-simulation/MORAI_Sim-tutorial/" class="md-nav__link">
+      <a href="../../../../../../tutorials/ad-hoc-simulation/digital-twin-simulation/MORAI_Sim-tutorial/" class="md-nav__link">
         MORAI Sim: Drive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../tutorials/ad-hoc-simulation/digital-twin-simulation/carla-tutorial/" class="md-nav__link">
+        CARLA simulator
       </a>
     </li>
   
@@ -906,7 +922,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../tutorials/scenario-simulation/">Scenario simulation</a>
+          <a href="../../../../../../tutorials/scenario-simulation/">Scenario simulation</a>
           
             <label for="__nav_3_3">
               <span class="md-nav__icon md-icon"></span>
@@ -966,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/scenario-simulation/planning-simulation/installation/" class="md-nav__link">
+      <a href="../../../../../../tutorials/scenario-simulation/planning-simulation/installation/" class="md-nav__link">
         Installation
       </a>
     </li>
@@ -980,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/scenario-simulation/planning-simulation/scenario-test-simulation/" class="md-nav__link">
+      <a href="../../../../../../tutorials/scenario-simulation/planning-simulation/scenario-test-simulation/" class="md-nav__link">
         Scenario test simulation
       </a>
     </li>
@@ -994,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/scenario-simulation/planning-simulation/random-test-simulation/" class="md-nav__link">
+      <a href="../../../../../../tutorials/scenario-simulation/planning-simulation/random-test-simulation/" class="md-nav__link">
         Random test simulation
       </a>
     </li>
@@ -1048,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/scenario-simulation/rosbag-replay-simulation/driving-log-replayer/" class="md-nav__link">
+      <a href="../../../../../../tutorials/scenario-simulation/rosbag-replay-simulation/driving-log-replayer/" class="md-nav__link">
         Driving Log Replayer
       </a>
     </li>
@@ -1110,7 +1126,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/">How to guides</a>
+          <a href="../../../../../../how-to-guides/">How to guides</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1182,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/integrating-autoware/overview/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/integrating-autoware/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1229,7 +1245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/integrating-autoware/creating-your-autoware-repositories/creating-autoware-repositories/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/integrating-autoware/creating-your-autoware-repositories/creating-autoware-repositories/" class="md-nav__link">
         Creating Autoware repositories
       </a>
     </li>
@@ -1278,7 +1294,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/">2. Creating vehicle and sensor model</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/">2. Creating vehicle and sensor model</a>
           
             <label for="__nav_4_2_3">
               <span class="md-nav__icon md-icon"></span>
@@ -1321,7 +1337,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/creating-sensor-model/">Creating sensor model</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/creating-sensor-model/">Creating sensor model</a>
           
         </div>
       
@@ -1367,7 +1383,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/creating-individual-params/">Creating individual params</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/creating-individual-params/">Creating individual params</a>
           
         </div>
       
@@ -1413,7 +1429,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/creating-vehicle-model/">Creating vehicle model</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/creating-vehicle-model/">Creating vehicle model</a>
           
         </div>
       
@@ -1473,7 +1489,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/">Calibrating sensors</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/">Calibrating sensors</a>
           
             <label for="__nav_4_2_3_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1516,7 +1532,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/calibration-tools/">Starting with TIER IV's CalibrationTools</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/calibration-tools/">Starting with TIER IV's CalibrationTools</a>
           
         </div>
       
@@ -1562,7 +1578,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/extrinsic-manual-calibration/">Extrinsic manual calibration</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/extrinsic-manual-calibration/">Extrinsic manual calibration</a>
           
         </div>
       
@@ -1608,7 +1624,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/lidar-lidar-calibration/">Lidar-lidar calibration</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/lidar-lidar-calibration/">Lidar-lidar calibration</a>
           
         </div>
       
@@ -1654,7 +1670,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/ground-lidar-calibration/">Ground plane-lidar calibration</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/ground-lidar-calibration/">Ground plane-lidar calibration</a>
           
         </div>
       
@@ -1700,7 +1716,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/intrinsic-camera-calibration/">Intrinsic camera calibration</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/intrinsic-camera-calibration/">Intrinsic camera calibration</a>
           
         </div>
       
@@ -1746,7 +1762,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/lidar-camera-calibration/">Lidar-camera calibration</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/lidar-camera-calibration/">Lidar-camera calibration</a>
           
         </div>
       
@@ -1792,7 +1808,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/lidar-imu-calibration/">Lidar-IMU calibration</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/calibrating-sensors/lidar-imu-calibration/">Lidar-IMU calibration</a>
           
         </div>
       
@@ -1871,7 +1887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-interface-package/vehicle-interface/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-interface-package/vehicle-interface/" class="md-nav__link">
         Vehicle interface overview
       </a>
     </li>
@@ -1885,7 +1901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-interface-package/creating-vehicle-interface/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-interface-package/creating-vehicle-interface/" class="md-nav__link">
         Creating vehicle interface
       </a>
     </li>
@@ -1899,7 +1915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-interface-package/ackermann-kinematic-model/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-interface-package/ackermann-kinematic-model/" class="md-nav__link">
         Ackermann kinematic model
       </a>
     </li>
@@ -1913,7 +1929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/integrating-autoware/creating-vehicle-interface-package/customizing-for-differential-drive-model/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/integrating-autoware/creating-vehicle-interface-package/customizing-for-differential-drive-model/" class="md-nav__link">
         Customizing for differential drive vehicle
       </a>
     </li>
@@ -1962,7 +1978,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/">4. Creating maps</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/">4. Creating maps</a>
           
             <label for="__nav_4_2_5">
               <span class="md-nav__icon md-icon"></span>
@@ -2027,7 +2043,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/">Open-source SLAM algorithms</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/">Open-source SLAM algorithms</a>
           
             <label for="__nav_4_2_5_2">
               <span class="md-nav__icon md-icon"></span>
@@ -2070,7 +2086,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/fast-lio-lc/">FAST-LIO-LC</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/fast-lio-lc/">FAST-LIO-LC</a>
           
         </div>
       
@@ -2116,7 +2132,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/fast-lio-slam/">FAST_LIO_SLAM</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/fast-lio-slam/">FAST_LIO_SLAM</a>
           
         </div>
       
@@ -2162,7 +2178,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/fd-slam/">FD-SLAM</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/fd-slam/">FD-SLAM</a>
           
         </div>
       
@@ -2208,7 +2224,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/hdl-graph-slam/">hdl_graph_slam</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/hdl-graph-slam/">hdl_graph_slam</a>
           
         </div>
       
@@ -2254,7 +2270,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/ia-lio-slam/">IA_LIO_SAM</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/ia-lio-slam/">IA_LIO_SAM</a>
           
         </div>
       
@@ -2300,7 +2316,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/iscloam/">iscloam</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/iscloam/">iscloam</a>
           
         </div>
       
@@ -2346,7 +2362,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/lego-loam-bor/">LeGO-LOAM-BOR</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/lego-loam-bor/">LeGO-LOAM-BOR</a>
           
         </div>
       
@@ -2392,7 +2408,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/lio-sam/">LIO-SAM</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/lio-sam/">LIO-SAM</a>
           
         </div>
       
@@ -2438,7 +2454,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/optimized-sc-f-loam/">Optimized-SC-F-LOAM</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/optimized-sc-f-loam/">Optimized-SC-F-LOAM</a>
           
         </div>
       
@@ -2484,7 +2500,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/sc-a-loam/">SC-A-LOAM</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/sc-a-loam/">SC-A-LOAM</a>
           
         </div>
       
@@ -2530,7 +2546,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/sc-lego-loam/">SC-LeGO-LOAM</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/open-source-slam/sc-lego-loam/">SC-LeGO-LOAM</a>
           
         </div>
       
@@ -2583,7 +2599,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/converting-utm-to-mgrs-map/">Converting UTM map to MGRS map</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/converting-utm-to-mgrs-map/">Converting UTM map to MGRS map</a>
           
         </div>
       
@@ -2629,7 +2645,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/pointcloud-map-downsampling/">Pointcloud map downsampling</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/pointcloud-map-downsampling/">Pointcloud map downsampling</a>
           
         </div>
       
@@ -2687,7 +2703,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/">Creating a vector map</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/">Creating a vector map</a>
           
             <label for="__nav_4_2_5_5">
               <span class="md-nav__icon md-icon"></span>
@@ -2730,7 +2746,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/lanelet2/">Lanelet2</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/lanelet2/">Lanelet2</a>
           
         </div>
       
@@ -2776,7 +2792,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/crosswalk/">Crosswalk</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/crosswalk/">Crosswalk</a>
           
         </div>
       
@@ -2822,7 +2838,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/stop-line/">Stop line</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/stop-line/">Stop line</a>
           
         </div>
       
@@ -2868,7 +2884,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/traffic-light/">Traffic light</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/traffic-light/">Traffic light</a>
           
         </div>
       
@@ -2914,7 +2930,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/speed-bump/">Speed bump</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/speed-bump/">Speed bump</a>
           
         </div>
       
@@ -2960,7 +2976,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/detection-area/">Detection area</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/creating-maps/creating-vector-map/detection-area/">Detection area</a>
           
         </div>
       
@@ -3036,7 +3052,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/launch-autoware/">5. Launch Autoware</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/launch-autoware/">5. Launch Autoware</a>
           
             <label for="__nav_4_2_6">
               <span class="md-nav__icon md-icon"></span>
@@ -3079,7 +3095,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/launch-autoware/vehicle/">Launch vehicle</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/launch-autoware/vehicle/">Launch vehicle</a>
           
         </div>
       
@@ -3125,7 +3141,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/launch-autoware/system/">Launch system</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/launch-autoware/system/">Launch system</a>
           
         </div>
       
@@ -3171,7 +3187,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/launch-autoware/map/">Launch map</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/launch-autoware/map/">Launch map</a>
           
         </div>
       
@@ -3217,7 +3233,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/launch-autoware/sensing/">Launch sensing</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/launch-autoware/sensing/">Launch sensing</a>
           
         </div>
       
@@ -3265,7 +3281,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/launch-autoware/localization/">Launch localization</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/launch-autoware/localization/">Launch localization</a>
           
             <label for="__nav_4_2_6_6">
               <span class="md-nav__icon md-icon"></span>
@@ -3308,7 +3324,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/launch-autoware/localization/eagleye/">Eagleye</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/launch-autoware/localization/eagleye/">Eagleye</a>
           
         </div>
       
@@ -3361,7 +3377,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/launch-autoware/perception/">Launch perception</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/launch-autoware/perception/">Launch perception</a>
           
         </div>
       
@@ -3407,7 +3423,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/launch-autoware/planning/">Launch planning</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/launch-autoware/planning/">Launch planning</a>
           
         </div>
       
@@ -3453,7 +3469,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/launch-autoware/control/">Launch control</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/launch-autoware/control/">Launch control</a>
           
         </div>
       
@@ -3521,7 +3537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/integrating-autoware/tuning-parameters-and-performance/evaluating-controller-performance/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/integrating-autoware/tuning-parameters-and-performance/evaluating-controller-performance/" class="md-nav__link">
         Evaluating the controller performance
       </a>
     </li>
@@ -3535,7 +3551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/integrating-autoware/tuning-parameters-and-performance/evaluating-real-time-performance/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/integrating-autoware/tuning-parameters-and-performance/evaluating-real-time-performance/" class="md-nav__link">
         Evaluating real-time performance
       </a>
     </li>
@@ -3576,7 +3592,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../how-to-guides/integrating-autoware/awsim-integration/">7. AWSIM Integration</a>
+          <a href="../../../../../../how-to-guides/integrating-autoware/awsim-integration/">7. AWSIM Integration</a>
           
         </div>
       
@@ -3644,7 +3660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/training-machine-learning-models/training-models/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/training-machine-learning-models/training-models/" class="md-nav__link">
         Training and Deploying Models
       </a>
     </li>
@@ -3720,7 +3736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/others/add-a-custom-ros-message/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/others/add-a-custom-ros-message/" class="md-nav__link">
         Add a custom ROS message
       </a>
     </li>
@@ -3734,7 +3750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/others/advanced-usage-of-colcon/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/others/advanced-usage-of-colcon/" class="md-nav__link">
         Advanced usage of colcon
       </a>
     </li>
@@ -3748,7 +3764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/others/an-example-procedure-for-adding-and-evaluating-a-new-node/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/others/an-example-procedure-for-adding-and-evaluating-a-new-node/" class="md-nav__link">
         An example procedure for adding and evaluating a new node
       </a>
     </li>
@@ -3762,7 +3778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/others/applying-clang-tidy-to-ros-packages/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/others/applying-clang-tidy-to-ros-packages/" class="md-nav__link">
         Applying Clang-Tidy to ROS packages
       </a>
     </li>
@@ -3776,7 +3792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/others/debug-autoware/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/others/debug-autoware/" class="md-nav__link">
         Debug Autoware
       </a>
     </li>
@@ -3790,7 +3806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/others/defining-temporal-performance-metrics/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/others/defining-temporal-performance-metrics/" class="md-nav__link">
         Defining temporal performance metrics on components
       </a>
     </li>
@@ -3804,7 +3820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/others/determining-component-dependencies/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/others/determining-component-dependencies/" class="md-nav__link">
         Determining component dependencies
       </a>
     </li>
@@ -3818,7 +3834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/others/fixing-dependent-package-versions/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/others/fixing-dependent-package-versions/" class="md-nav__link">
         Fixing dependent package versions
       </a>
     </li>
@@ -3832,7 +3848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/others/reducing-start-delays/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/others/reducing-start-delays/" class="md-nav__link">
         Reducing start delays on real vehicles
       </a>
     </li>
@@ -3846,7 +3862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/others/running-autoware-without-cuda/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/others/running-autoware-without-cuda/" class="md-nav__link">
         Running Autoware without CUDA
       </a>
     </li>
@@ -3860,7 +3876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to-guides/others/using-divided-map/" class="md-nav__link">
+      <a href="../../../../../../how-to-guides/others/using-divided-map/" class="md-nav__link">
         Using divided pointcloud map
       </a>
     </li>
@@ -3887,16 +3903,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -3917,7 +3933,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/">Design</a>
+          <a href="../../../../../">Design</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -3925,7 +3941,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Design
@@ -3964,7 +3980,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-concepts/">Autoware concepts</a>
+          <a href="../../../../../autoware-concepts/">Autoware concepts</a>
           
             <label for="__nav_5_2">
               <span class="md-nav__icon md-icon"></span>
@@ -3987,7 +4003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-concepts/difference-from-ai-and-auto/" class="md-nav__link">
+      <a href="../../../../../autoware-concepts/difference-from-ai-and-auto/" class="md-nav__link">
         How is Autoware Core/Universe different from Autoware.AI and Autoware.Auto?
       </a>
     </li>
@@ -4006,18 +4022,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
       
       
         
@@ -4046,7 +4062,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-architecture/">Autoware architecture</a>
+          <a href="../../../../">Autoware architecture</a>
           
             <label for="__nav_5_3">
               <span class="md-nav__icon md-icon"></span>
@@ -4054,7 +4070,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
           Autoware architecture
@@ -4091,7 +4107,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-architecture/sensing/">Sensing</a>
+          <a href="../../../../sensing/">Sensing</a>
           
             <label for="__nav_5_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -4155,7 +4171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-architecture/sensing/data-types/gnss-ins-data/" class="md-nav__link">
+      <a href="../../../../sensing/data-types/gnss-ins-data/" class="md-nav__link">
         GNSS/INS data pre-processing design
       </a>
     </li>
@@ -4169,7 +4185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-architecture/sensing/data-types/image/" class="md-nav__link">
+      <a href="../../../../sensing/data-types/image/" class="md-nav__link">
         Image pre-processing design
       </a>
     </li>
@@ -4183,7 +4199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-architecture/sensing/data-types/point-cloud/" class="md-nav__link">
+      <a href="../../../../sensing/data-types/point-cloud/" class="md-nav__link">
         Point cloud pre-processing design
       </a>
     </li>
@@ -4197,8 +4213,59 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-architecture/sensing/data-types/radar-data/" class="md-nav__link">
-        Radar data pre-processing design
+      <a href="../../../../sensing/data-types/ultrasonics-data/" class="md-nav__link">
+        Ultrasonics data pre-processing design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3_2_2_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_2_2_5" id="__nav_5_3_2_2_5_label" tabindex="0">
+          Radar data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_3_2_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Radar data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sensing/data-types/radar-data/radar-objects-data/" class="md-nav__link">
+        Radar objects data pre-processing design
       </a>
     </li>
   
@@ -4211,9 +4278,86 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-architecture/sensing/data-types/ultrasonics-data/" class="md-nav__link">
-        Ultrasonics data pre-processing design
+      <a href="../../../../sensing/data-types/radar-data/radar-pointcloud-data/" class="md-nav__link">
+        Radar pointcloud data pre-processing design
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3_2_2_5_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_2_2_5_3" id="__nav_5_3_2_2_5_3_label" tabindex="0">
+          Reference implementations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_5_3_2_2_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3_2_2_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference implementations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sensing/data-types/radar-data/reference-implementations/data-message/" class="md-nav__link">
+        Data message for radars
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sensing/data-types/radar-data/reference-implementations/device-driver/" class="md-nav__link">
+        Device driver for radars
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -4259,7 +4403,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-architecture/map/">Map</a>
+          <a href="../../../../map/">Map</a>
           
         </div>
       
@@ -4305,7 +4449,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-architecture/localization/">Localization</a>
+          <a href="../../../../localization/">Localization</a>
           
         </div>
       
@@ -4329,16 +4473,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_5" checked>
       
       
         
@@ -4348,12 +4492,14 @@
         
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-architecture/perception/">Perception</a>
+          <a href="../../../">Perception</a>
           
             <label for="__nav_5_3_5">
               <span class="md-nav__icon md-icon"></span>
@@ -4361,7 +4507,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5_3_5">
           <span class="md-nav__icon md-icon"></span>
           Perception
@@ -4376,9 +4522,235 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-architecture/perception/reference_implementation/" class="md-nav__link">
+      <a href="../../../reference_implementation/" class="md-nav__link">
         Perception Component Reference Implementation Design
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_5_3" checked>
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_5_3" id="__nav_5_3_5_3_label" tabindex="0">
+          Reference implementations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_3_5_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_3_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference implementations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_5_3_1" checked>
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_5_3_1" id="__nav_5_3_5_3_1_label" tabindex="0">
+          Radar based 3d detector
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_3_5_3_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_3_5_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Radar based 3d detector
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Radar faraway dynamic objects detection with radar objects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Radar faraway dynamic objects detection with radar objects
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-implementation" class="md-nav__link">
+    Reference implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crossing-filter" class="md-nav__link">
+    Crossing filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity-filter" class="md-nav__link">
+    Velocity filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-filter" class="md-nav__link">
+    Range filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-map-filter" class="md-nav__link">
+    Vector map filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radar-object-clustering" class="md-nav__link">
+    Radar object clustering
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    Note
+  </a>
+  
+    <nav class="md-nav" aria-label="Note">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-tuning" class="md-nav__link">
+    Parameter tuning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitation" class="md-nav__link">
+    Limitation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radar-based-3d-detector/" class="md-nav__link">
+        Radar based 3D detector
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -4417,7 +4789,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-architecture/planning/">Planning</a>
+          <a href="../../../../planning/">Planning</a>
           
         </div>
       
@@ -4463,7 +4835,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-architecture/control/">Control</a>
+          <a href="../../../../control/">Control</a>
           
         </div>
       
@@ -4509,7 +4881,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-architecture/vehicle/">Vehicle</a>
+          <a href="../../../../vehicle/">Vehicle</a>
           
         </div>
       
@@ -4555,7 +4927,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-architecture/node-diagram/">Node diagram</a>
+          <a href="../../../../node-diagram/">Node diagram</a>
           
         </div>
       
@@ -4614,7 +4986,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-interfaces/">Autoware interfaces</a>
+          <a href="../../../../../autoware-interfaces/">Autoware interfaces</a>
           
             <label for="__nav_5_4">
               <span class="md-nav__icon md-icon"></span>
@@ -4658,12 +5030,14 @@
         
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-interfaces/ad-api/">AD API</a>
+          <a href="../../../../../autoware-interfaces/ad-api/">AD API</a>
           
             <label for="__nav_5_4_2">
               <span class="md-nav__icon md-icon"></span>
@@ -4685,210 +5059,10 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_2_2" >
-      
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_5_4_2_2" id="__nav_5_4_2_2_label" tabindex="0">
-          Features
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_2_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5_4_2_2">
-          <span class="md-nav__icon md-icon"></span>
-          Features
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/ad-api/features/cooperation/" class="md-nav__link">
-        Cooperation
+      <a href="../../../../../autoware-interfaces/ad-api/release/" class="md-nav__link">
+        Release notes
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/ad-api/features/fail-safe/" class="md-nav__link">
-        Fail-safe
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/ad-api/features/interface/" class="md-nav__link">
-        Interface
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/ad-api/features/localization/" class="md-nav__link">
-        Localization
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/ad-api/features/motion/" class="md-nav__link">
-        Motion
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/ad-api/features/operation_mode/" class="md-nav__link">
-        Operation mode
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/ad-api/features/perception/" class="md-nav__link">
-        Perception
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/ad-api/features/planning-factors/" class="md-nav__link">
-        Planning factors
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/ad-api/features/routing/" class="md-nav__link">
-        Routing
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/ad-api/features/vehicle-doors/" class="md-nav__link">
-        Vehicle doors
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/ad-api/features/vehicle-status/" class="md-nav__link">
-        Vehicle status
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -4920,7 +5094,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-interfaces/ad-api/list/">List</a>
+          <a href="../../../../../autoware-interfaces/ad-api/list/">List</a>
           
         </div>
       
@@ -4966,7 +5140,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-interfaces/ad-api/types/">Types</a>
+          <a href="../../../../../autoware-interfaces/ad-api/types/">Types</a>
           
         </div>
       
@@ -4977,6 +5151,236 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_2_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4_2_5" id="__nav_5_4_2_5_label" tabindex="0">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/cooperation/" class="md-nav__link">
+        Cooperation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/fail-safe/" class="md-nav__link">
+        Fail-safe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/heartbeat/" class="md-nav__link">
+        Heartbeat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/interface/" class="md-nav__link">
+        Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/localization/" class="md-nav__link">
+        Localization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/motion/" class="md-nav__link">
+        Motion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/operation_mode/" class="md-nav__link">
+        Operation mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/perception/" class="md-nav__link">
+        Perception
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/planning-factors/" class="md-nav__link">
+        Planning factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/routing/" class="md-nav__link">
+        Routing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/vehicle-doors/" class="md-nav__link">
+        Vehicle doors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../autoware-interfaces/ad-api/features/vehicle-status/" class="md-nav__link">
+        Vehicle status
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -5035,7 +5439,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/autoware-interfaces/components/">Components</a>
+          <a href="../../../../../autoware-interfaces/components/">Components</a>
           
             <label for="__nav_5_4_3">
               <span class="md-nav__icon md-icon"></span>
@@ -5058,7 +5462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/components/planning/" class="md-nav__link">
+      <a href="../../../../../autoware-interfaces/components/planning/" class="md-nav__link">
         Planning
       </a>
     </li>
@@ -5072,7 +5476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/components/control/" class="md-nav__link">
+      <a href="../../../../../autoware-interfaces/components/control/" class="md-nav__link">
         Control
       </a>
     </li>
@@ -5086,7 +5490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/components/localization/" class="md-nav__link">
+      <a href="../../../../../autoware-interfaces/components/localization/" class="md-nav__link">
         Localization
       </a>
     </li>
@@ -5100,7 +5504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/components/map/" class="md-nav__link">
+      <a href="../../../../../autoware-interfaces/components/map/" class="md-nav__link">
         Map
       </a>
     </li>
@@ -5114,7 +5518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/components/sensing/" class="md-nav__link">
+      <a href="../../../../../autoware-interfaces/components/sensing/" class="md-nav__link">
         Sensing
       </a>
     </li>
@@ -5128,7 +5532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/components/perception/" class="md-nav__link">
+      <a href="../../../../../autoware-interfaces/components/perception/" class="md-nav__link">
         Perception
       </a>
     </li>
@@ -5142,7 +5546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/components/vehicle-interface/" class="md-nav__link">
+      <a href="../../../../../autoware-interfaces/components/vehicle-interface/" class="md-nav__link">
         Vehicle Interface
       </a>
     </li>
@@ -5156,7 +5560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/autoware-interfaces/components/vehicle-dimensions/" class="md-nav__link">
+      <a href="../../../../../autoware-interfaces/components/vehicle-dimensions/" class="md-nav__link">
         Vehicle dimensions
       </a>
     </li>
@@ -5212,7 +5616,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../design/configuration-management/">Configuration management</a>
+          <a href="../../../../../configuration-management/">Configuration management</a>
           
             <label for="__nav_5_5">
               <span class="md-nav__icon md-icon"></span>
@@ -5235,7 +5639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/configuration-management/development-process/" class="md-nav__link">
+      <a href="../../../../../configuration-management/development-process/" class="md-nav__link">
         Development process
       </a>
     </li>
@@ -5249,7 +5653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/configuration-management/repository-structure/" class="md-nav__link">
+      <a href="../../../../../configuration-management/repository-structure/" class="md-nav__link">
         Repository structure
       </a>
     </li>
@@ -5263,7 +5667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/configuration-management/release-process/" class="md-nav__link">
+      <a href="../../../../../configuration-management/release-process/" class="md-nav__link">
         Release process
       </a>
     </li>
@@ -5334,7 +5738,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../reference-hw/">Reference HW</a>
+          <a href="../../../../../../reference-hw/">Reference HW</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -5357,7 +5761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference-hw/ad-computers/" class="md-nav__link">
+      <a href="../../../../../../reference-hw/ad-computers/" class="md-nav__link">
         AD Computers
       </a>
     </li>
@@ -5371,7 +5775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference-hw/lidars/" class="md-nav__link">
+      <a href="../../../../../../reference-hw/lidars/" class="md-nav__link">
         LIDARs
       </a>
     </li>
@@ -5385,7 +5789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference-hw/radars/" class="md-nav__link">
+      <a href="../../../../../../reference-hw/radars/" class="md-nav__link">
         RADARs
       </a>
     </li>
@@ -5399,7 +5803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference-hw/cameras/" class="md-nav__link">
+      <a href="../../../../../../reference-hw/cameras/" class="md-nav__link">
         CAMERAs
       </a>
     </li>
@@ -5413,7 +5817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference-hw/thermal_cameras/" class="md-nav__link">
+      <a href="../../../../../../reference-hw/thermal_cameras/" class="md-nav__link">
         Thermal CAMERAs
       </a>
     </li>
@@ -5427,7 +5831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference-hw/imu_ahrs_gnss_ins/" class="md-nav__link">
+      <a href="../../../../../../reference-hw/imu_ahrs_gnss_ins/" class="md-nav__link">
         IMU, AHRS & GNSS/INS
       </a>
     </li>
@@ -5441,7 +5845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference-hw/vehicle_drive_by_wire_suppliers/" class="md-nav__link">
+      <a href="../../../../../../reference-hw/vehicle_drive_by_wire_suppliers/" class="md-nav__link">
         Vehicle Drive By Wire Suppliers
       </a>
     </li>
@@ -5455,7 +5859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference-hw/vehicle_platform_suppliers/" class="md-nav__link">
+      <a href="../../../../../../reference-hw/vehicle_platform_suppliers/" class="md-nav__link">
         Vehicle Platform Suppliers
       </a>
     </li>
@@ -5469,7 +5873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference-hw/remote_drive/" class="md-nav__link">
+      <a href="../../../../../../reference-hw/remote_drive/" class="md-nav__link">
         Remote Drive
       </a>
     </li>
@@ -5483,7 +5887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference-hw/full_drivers_list/" class="md-nav__link">
+      <a href="../../../../../../reference-hw/full_drivers_list/" class="md-nav__link">
         Drivers List
       </a>
     </li>
@@ -5497,7 +5901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference-hw/ad_sensor_kit_suppliers/" class="md-nav__link">
+      <a href="../../../../../../reference-hw/ad_sensor_kit_suppliers/" class="md-nav__link">
         AD Sensor Kit Suppliers
       </a>
     </li>
@@ -5551,7 +5955,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../contributing/">Contributing</a>
+          <a href="../../../../../../contributing/">Contributing</a>
           
             <label for="__nav_7">
               <span class="md-nav__icon md-icon"></span>
@@ -5574,7 +5978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/license/" class="md-nav__link">
+      <a href="../../../../../../contributing/license/" class="md-nav__link">
         License
       </a>
     </li>
@@ -5614,7 +6018,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../contributing/coding-guidelines/">Coding guidelines</a>
+          <a href="../../../../../../contributing/coding-guidelines/">Coding guidelines</a>
           
             <label for="__nav_7_3">
               <span class="md-nav__icon md-icon"></span>
@@ -5684,7 +6088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/languages/cpp/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/languages/cpp/" class="md-nav__link">
         C++
       </a>
     </li>
@@ -5698,7 +6102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/languages/python/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/languages/python/" class="md-nav__link">
         Python
       </a>
     </li>
@@ -5712,7 +6116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/languages/shell-scripts/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/languages/shell-scripts/" class="md-nav__link">
         Shell scripts
       </a>
     </li>
@@ -5726,7 +6130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/languages/markdown/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/languages/markdown/" class="md-nav__link">
         Markdown
       </a>
     </li>
@@ -5740,7 +6144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/languages/cmake/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/languages/cmake/" class="md-nav__link">
         CMake
       </a>
     </li>
@@ -5754,7 +6158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/languages/package-xml/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/languages/package-xml/" class="md-nav__link">
         package.xml
       </a>
     </li>
@@ -5768,7 +6172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/languages/docker/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/languages/docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -5782,7 +6186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/languages/github-actions/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/languages/github-actions/" class="md-nav__link">
         GitHub Actions
       </a>
     </li>
@@ -5852,7 +6256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/ros-nodes/class-design/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/ros-nodes/class-design/" class="md-nav__link">
         Class design
       </a>
     </li>
@@ -5866,7 +6270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/ros-nodes/console-logging/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/ros-nodes/console-logging/" class="md-nav__link">
         Console logging
       </a>
     </li>
@@ -5880,7 +6284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/ros-nodes/coordinate-system/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/ros-nodes/coordinate-system/" class="md-nav__link">
         Coordinate system
       </a>
     </li>
@@ -5894,7 +6298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/ros-nodes/directory-structure/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/ros-nodes/directory-structure/" class="md-nav__link">
         Directory structure
       </a>
     </li>
@@ -5908,7 +6312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/ros-nodes/launch-files/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/ros-nodes/launch-files/" class="md-nav__link">
         Launch files
       </a>
     </li>
@@ -5922,7 +6326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/ros-nodes/message-guidelines/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/ros-nodes/message-guidelines/" class="md-nav__link">
         Message guidelines
       </a>
     </li>
@@ -5936,7 +6340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/ros-nodes/parameters/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/ros-nodes/parameters/" class="md-nav__link">
         Parameters
       </a>
     </li>
@@ -5950,7 +6354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/ros-nodes/task-scheduling/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/ros-nodes/task-scheduling/" class="md-nav__link">
         Task scheduling
       </a>
     </li>
@@ -5964,7 +6368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/coding-guidelines/ros-nodes/topic-namespaces/" class="md-nav__link">
+      <a href="../../../../../../contributing/coding-guidelines/ros-nodes/topic-namespaces/" class="md-nav__link">
         Topic namespaces
       </a>
     </li>
@@ -6018,7 +6422,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../contributing/testing-guidelines/">Testing guidelines</a>
+          <a href="../../../../../../contributing/testing-guidelines/">Testing guidelines</a>
           
             <label for="__nav_7_4">
               <span class="md-nav__icon md-icon"></span>
@@ -6041,7 +6445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/testing-guidelines/unit-testing/" class="md-nav__link">
+      <a href="../../../../../../contributing/testing-guidelines/unit-testing/" class="md-nav__link">
         Unit testing
       </a>
     </li>
@@ -6055,7 +6459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/testing-guidelines/integration-testing/" class="md-nav__link">
+      <a href="../../../../../../contributing/testing-guidelines/integration-testing/" class="md-nav__link">
         Integration testing
       </a>
     </li>
@@ -6098,7 +6502,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../contributing/documentation-guidelines/">Documentation guidelines</a>
+          <a href="../../../../../../contributing/documentation-guidelines/">Documentation guidelines</a>
           
         </div>
       
@@ -6154,7 +6558,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../contributing/pull-request-guidelines/">Pull request guidelines</a>
+          <a href="../../../../../../contributing/pull-request-guidelines/">Pull request guidelines</a>
           
             <label for="__nav_7_6">
               <span class="md-nav__icon md-icon"></span>
@@ -6177,7 +6581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/pull-request-guidelines/ci-checks/" class="md-nav__link">
+      <a href="../../../../../../contributing/pull-request-guidelines/ci-checks/" class="md-nav__link">
         CI checks
       </a>
     </li>
@@ -6191,7 +6595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/pull-request-guidelines/commit-guidelines/" class="md-nav__link">
+      <a href="../../../../../../contributing/pull-request-guidelines/commit-guidelines/" class="md-nav__link">
         Commit guidelines
       </a>
     </li>
@@ -6205,7 +6609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/pull-request-guidelines/review-guidelines/" class="md-nav__link">
+      <a href="../../../../../../contributing/pull-request-guidelines/review-guidelines/" class="md-nav__link">
         Review guidelines
       </a>
     </li>
@@ -6219,7 +6623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/pull-request-guidelines/review-tips/" class="md-nav__link">
+      <a href="../../../../../../contributing/pull-request-guidelines/review-tips/" class="md-nav__link">
         Review tips
       </a>
     </li>
@@ -6262,7 +6666,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../contributing/discussion-guidelines/">Discussion guidelines</a>
+          <a href="../../../../../../contributing/discussion-guidelines/">Discussion guidelines</a>
           
         </div>
       
@@ -6316,7 +6720,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../datasets/">Datasets</a>
+          <a href="../../../../../../datasets/">Datasets</a>
           
         </div>
       
@@ -6363,7 +6767,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../models/">Models</a>
+          <a href="../../../../../../models/">Models</a>
           
         </div>
       
@@ -6416,7 +6820,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../support/">Support</a>
+          <a href="../../../../../../support/">Support</a>
           
             <label for="__nav_10">
               <span class="md-nav__icon md-icon"></span>
@@ -6439,7 +6843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../support/support-guidelines/" class="md-nav__link">
+      <a href="../../../../../../support/support-guidelines/" class="md-nav__link">
         Support guidelines
       </a>
     </li>
@@ -6477,7 +6881,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../support/troubleshooting/">Troubleshooting</a>
+          <a href="../../../../../../support/troubleshooting/">Troubleshooting</a>
           
             <label for="__nav_10_3">
               <span class="md-nav__icon md-icon"></span>
@@ -6500,7 +6904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../support/troubleshooting/performance-troubleshooting/" class="md-nav__link">
+      <a href="../../../../../../support/troubleshooting/performance-troubleshooting/" class="md-nav__link">
         Performance Troubleshooting
       </a>
     </li>
@@ -6521,7 +6925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../support/docs-guide/" class="md-nav__link">
+      <a href="../../../../../../support/docs-guide/" class="md-nav__link">
         Docs guide
       </a>
     </li>
@@ -6563,7 +6967,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../autoware-competitions/">Competitions</a>
+          <a href="../../../../../../autoware-competitions/">Competitions</a>
           
         </div>
       
@@ -6609,30 +7013,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-set-up-a-development-environment" class="md-nav__link">
-    How to set up a development environment
+  <a href="#reference-implementation" class="md-nav__link">
+    Reference implementation
   </a>
   
-    <nav class="md-nav" aria-label="How to set up a development environment">
+    <nav class="md-nav" aria-label="Reference implementation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installing-dependencies-manually" class="md-nav__link">
-    Installing dependencies manually
+  <a href="#crossing-filter" class="md-nav__link">
+    Crossing filter
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing-dependencies-using-ansible" class="md-nav__link">
-    Installing dependencies using Ansible
+  <a href="#velocity-filter" class="md-nav__link">
+    Velocity filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-filter" class="md-nav__link">
+    Range filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-map-filter" class="md-nav__link">
+    Vector map filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radar-object-clustering" class="md-nav__link">
+    Radar object clustering
   </a>
   
 </li>
@@ -6643,16 +7068,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-set-up-a-workspace" class="md-nav__link">
-    How to set up a workspace
+  <a href="#note" class="md-nav__link">
+    Note
+  </a>
+  
+    <nav class="md-nav" aria-label="Note">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-tuning" class="md-nav__link">
+    Parameter tuning
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-update-a-workspace" class="md-nav__link">
-    How to update a workspace
+        
+          <li class="md-nav__item">
+  <a href="#limitation" class="md-nav__link">
+    Limitation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6674,148 +7112,55 @@
   
 
 
-<div><h1 id="docker-installation-for-development">Docker installation for development<a class="headerlink" href="#docker-installation-for-development" title="Permanent link">#</a></h1>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<div><h1 id="radar-faraway-dynamic-objects-detection-with-radar-objects">Radar faraway dynamic objects detection with radar objects<a class="headerlink" href="#radar-faraway-dynamic-objects-detection-with-radar-objects" title="Permanent link">#</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<p>This diagram describes the pipeline for radar faraway dynamic object detection.</p>
+<p><img alt="faraway object detection" src="../image/faraway-object-detection.drawio.svg"></p>
+<h2 id="reference-implementation">Reference implementation<a class="headerlink" href="#reference-implementation" title="Permanent link">#</a></h2>
+<h3 id="crossing-filter">Crossing filter<a class="headerlink" href="#crossing-filter" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://git-scm.com/">Git</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/radar_crossing_objects_noise_filter">radar_crossing_objects_noise_filter</a></li>
 </ul>
+<p>This package can filter the noise objects crossing to the ego vehicle, which are most likely ghost objects.</p>
+<h3 id="velocity-filter">Velocity filter<a class="headerlink" href="#velocity-filter" title="Permanent link">#</a></h3>
 <ul>
-<li>For NVIDIA Jetson devices, install <a href="https://docs.nvidia.com/jetson/jetpack/install-jetpack/index.html#how-to-install-jetpack">JetPack</a> &gt;= 5.0</li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/object_velocity_splitter">object_velocity_splitter</a></li>
 </ul>
-<h2 id="how-to-set-up-a-development-environment">How to set up a development environment<a class="headerlink" href="#how-to-set-up-a-development-environment" title="Permanent link">#</a></h2>
-<ol>
-<li>
-<p>Clone <code>autowarefoundation/autoware</code> and move to the directory.</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/autowarefoundation/autoware.git
-<span class="nb">cd</span><span class="w"> </span>autoware
-</code></pre></div>
-</li>
-<li>
-<p>You can install the dependencies either manually or using the provided Ansible script.</p>
-</li>
-</ol>
-<blockquote>
-<p>Note: Before installing NVIDIA libraries, confirm and agree with the licenses.</p>
-</blockquote>
+<p>Static objects include many noise like the objects reflected from ground.
+In many cases for radars, dynamic objects can be detected stably.
+To filter out static objects, <code>object_velocity_splitter</code> can be used.</p>
+<h3 id="range-filter">Range filter<a class="headerlink" href="#range-filter" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://docs.nvidia.com/cuda/eula/index.html">CUDA</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/object_range_splitter">object_range_splitter</a></li>
 </ul>
-<h3 id="installing-dependencies-manually">Installing dependencies manually<a class="headerlink" href="#installing-dependencies-manually" title="Permanent link">#</a></h3>
+<p>For some radars, ghost objects sometimes occur for near objects.
+To filter these objects, <code>object_range_splitter</code> can be used.</p>
+<h3 id="vector-map-filter">Vector map filter<a class="headerlink" href="#vector-map-filter" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/cuda#manual-installation">Install Nvidia CUDA</a></li>
-<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/docker_engine#manual-installation">Install Docker Engine</a></li>
-<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/nvidia_docker#manual-installation">Install NVIDIA Container Toolkit</a></li>
-<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/rocker#manual-installation">Install rocker</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/blob/main/perception/detected_object_validation/object-lanelet-filter.md">object-lanelet-filter</a></li>
 </ul>
-<h3 id="installing-dependencies-using-ansible">Installing dependencies using Ansible<a class="headerlink" href="#installing-dependencies-using-ansible" title="Permanent link">#</a></h3>
-<p>Be very careful with this method. Make sure you read and confirmed all the steps in the Ansible configuration before using it.</p>
-<p>If you've manually installed the dependencies, you can skip this section.</p>
-<div class="highlight"><pre><span></span><code>./setup-dev-env.sh<span class="w"> </span>docker
-</code></pre></div>
-<p>You might need to log out and log back to make the current user able to use docker.</p>
-<h2 id="how-to-set-up-a-workspace">How to set up a workspace<a class="headerlink" href="#how-to-set-up-a-workspace" title="Permanent link">#</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Before proceeding, confirm and agree with the <a href="https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license">NVIDIA Deep Learning Container license</a>.
-By pulling and using the Autoware Universe images, you accept the terms and conditions of the license.</p>
-</div>
-<ol>
-<li>
-<p>Create the <code>autoware_map</code> directory for map data later.</p>
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>~/autoware_map
-</code></pre></div>
-</li>
-<li>
-<p>Pull the Docker image</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/autowarefoundation/autoware-universe:latest-cuda
-</code></pre></div>
-</li>
-<li>
-<p>Launch a Docker container.</p>
+<p>In most cases, vehicles drive in drivable are.
+To filter objects that are out of drivable area, <code>object-lanelet-filter</code> can be used.
+<code>object-lanelet-filter</code> filter objects that are out of drivable area defined by vector map.</p>
+<p>Note that if you use <code>object-lanelet-filter</code> for radar faraway detection, you need to define drivable area in a vector map other than the area where autonomous car run.</p>
+<h3 id="radar-object-clustering">Radar object clustering<a class="headerlink" href="#radar-object-clustering" title="Permanent link">#</a></h3>
 <ul>
-<li>
-<p>For amd64 architecture computers with NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr>:</p>
-<div class="highlight"><pre><span></span><code>rocker<span class="w"> </span>--nvidia<span class="w"> </span>--x11<span class="w"> </span>--user<span class="w"> </span>--volume<span class="w"> </span><span class="nv">$HOME</span>/autoware<span class="w"> </span>--volume<span class="w"> </span><span class="nv">$HOME</span>/autoware_map<span class="w"> </span>--<span class="w"> </span>ghcr.io/autowarefoundation/autoware-universe:latest-cuda
-</code></pre></div>
-</li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/radar_object_clustering">radar_object_clustering</a></li>
 </ul>
+<p>This package can combine multiple radar detections from one object into one and adjust class and size.
+It can suppress splitting objects in tracking module.</p>
+<p><img alt="radar_object_clustering" src="https://raw.githubusercontent.com/autowarefoundation/autoware.universe/main/perception/radar_object_clustering/docs/radar_clustering.drawio.svg"></p>
+<h2 id="note">Note<a class="headerlink" href="#note" title="Permanent link">#</a></h2>
+<h3 id="parameter-tuning">Parameter tuning<a class="headerlink" href="#parameter-tuning" title="Permanent link">#</a></h3>
+<p>Detection performed only by Radar applies various strong noise processing.
+Therefore, there is a trade-off that if you strengthen the noise processing, things that you originally wanted to detect will disappear, and if you weaken it, your self-driving system will be unable to start because the object will be in front of you all the time due to noise.
+It is necessary to adjust parameters while paying attention to this trade-off.</p>
+<h3 id="limitation">Limitation<a class="headerlink" href="#limitation" title="Permanent link">#</a></h3>
 <ul>
-<li>
-<p>If you want to run container without using NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr>, or for arm64 architecture computers:</p>
-<div class="highlight"><pre><span></span><code>rocker<span class="w"> </span>-e<span class="w"> </span><span class="nv">LIBGL_ALWAYS_SOFTWARE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>--x11<span class="w"> </span>--user<span class="w"> </span>--volume<span class="w"> </span><span class="nv">$HOME</span>/autoware<span class="w"> </span>--volume<span class="w"> </span><span class="nv">$HOME</span>/autoware_map<span class="w"> </span>--<span class="w"> </span>ghcr.io/autowarefoundation/autoware-universe:latest-cuda
-</code></pre></div>
-<p>For detailed reason could be found <a href="../docker-installation/#docker-with-nvidia-gpu-fails-to-start-autoware-on-arm64-devices">here</a></p>
-</li>
+<li>Elevated railway, vehicles for multi-level intersection</li>
 </ul>
-<p>For more advanced usage, see <a href="https://github.com/autowarefoundation/autoware/tree/main/docker/README.md">here</a>.</p>
-<p>After that, move to the workspace in the container:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>autoware
-</code></pre></div>
-</li>
-<li>
-<p>Create the <code>src</code> directory and clone repositories into it.</p>
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>src
-vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware.repos
-</code></pre></div>
-</li>
-<li>
-<p>Update dependent <abbr title="Robot Operating System">ROS</abbr> packages.</p>
-<p>The dependency of Autoware may change after the Docker image was created.
- In that case, you need to run the following commands to update the dependency.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
-rosdep<span class="w"> </span>update
-rosdep<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>--rosdistro<span class="w"> </span><span class="nv">$ROS_DISTRO</span>
-</code></pre></div>
-</li>
-<li>
-<p>Build the workspace.</p>
-<div class="highlight"><pre><span></span><code>colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install<span class="w"> </span>--cmake-args<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
-</code></pre></div>
-<p>If there is any build issue, refer to <a href="../../../support/troubleshooting/#build-issues">Troubleshooting</a>.</p>
-</li>
-</ol>
-<h2 id="how-to-update-a-workspace">How to update a workspace<a class="headerlink" href="#how-to-update-a-workspace" title="Permanent link">#</a></h2>
-<ol>
-<li>
-<p>Update the Docker image.</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/autowarefoundation/autoware-universe:latest-cuda
-</code></pre></div>
-</li>
-<li>
-<p>Launch a Docker container.</p>
-<ul>
-<li>
-<p>For amd64 architecture computers:</p>
-<div class="highlight"><pre><span></span><code>rocker<span class="w"> </span>--nvidia<span class="w"> </span>--x11<span class="w"> </span>--user<span class="w"> </span>--volume<span class="w"> </span><span class="nv">$HOME</span>/autoware<span class="w"> </span>--<span class="w"> </span>ghcr.io/autowarefoundation/autoware-universe:latest-cuda
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p>If you want to run container without using NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr>, or for arm64 architecture computers:</p>
-<div class="highlight"><pre><span></span><code>rocker<span class="w"> </span>-e<span class="w"> </span><span class="nv">LIBGL_ALWAYS_SOFTWARE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>--x11<span class="w"> </span>--user<span class="w"> </span>--volume<span class="w"> </span><span class="nv">$HOME</span>/autoware<span class="w"> </span>--<span class="w"> </span>ghcr.io/autowarefoundation/autoware-universe:latest-cuda
-</code></pre></div>
-</li>
-</ul>
-</li>
-<li>
-<p>Update the <code>.repos</code> file.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>autoware
-git<span class="w"> </span>pull
-</code></pre></div>
-</li>
-<li>
-<p>Update the repositories.</p>
-<div class="highlight"><pre><span></span><code>vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware.repos
-vcs<span class="w"> </span>pull<span class="w"> </span>src
-</code></pre></div>
-</li>
-<li>
-<p>Build the workspace.</p>
-<div class="highlight"><pre><span></span><code>colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install<span class="w"> </span>--cmake-args<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
-</code></pre></div>
-</li>
-</ol>
+<p>If you use 2D radars (The radar can detect in xy-axis 2D coordinate, but can not have z-axis detection) and driving area has elevated railway or vehicles for multi-level intersection, the radar process detects these these and these have a bad influence to planning results.
+In addition, for now, elevated railway is detected as vehicle because the radar process doesn't have label classification feature and it leads to unintended behavior.</p>
 <!-- prettier-ignore --></div>
 
 
@@ -6843,7 +7188,7 @@ vcs<span class="w"> </span>pull<span class="w"> </span>src
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../additional-settings-for-developers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Additional settings for developers" rel="prev">
+          <a href="../../../reference_implementation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Perception Component Reference Implementation Design" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -6852,20 +7197,20 @@ vcs<span class="w"> </span>pull<span class="w"> </span>src
                 Previous
               </span>
               <div class="md-ellipsis">
-                Additional settings for developers
+                Perception Component Reference Implementation Design
               </div>
             </div>
           </a>
         
         
           
-          <a href="../docker-installation-prebuilt/" class="md-footer__link md-footer__link--next" aria-label="Next: Docker installation for quick start" rel="next">
+          <a href="../radar-based-3d-detector/" class="md-footer__link md-footer__link--next" aria-label="Next: Radar based 3D detector" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Docker installation for quick start
+                Radar based 3D detector
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -6901,13 +7246,13 @@ vcs<span class="w"> </span>pull<span class="w"> </span>src
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../../../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../../../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
         
-          <script src="../../../assets/js/mathjax.js"></script>
+          <script src="../../../../../../assets/js/mathjax.js"></script>
         
       
         
