@@ -6136,6 +6136,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_3_3" id="__nav_7_3_3_label" tabindex="0">
@@ -6240,8 +6242,57 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#directory-descriptions" class="md-nav__link">
-    Directory descriptions
+  <a href="#entire-structure" class="md-nav__link">
+    Entire structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-name" class="md-nav__link">
+    Package name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-folder" class="md-nav__link">
+    Package folder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config-and-schema" class="md-nav__link">
+    config and schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doc" class="md-nav__link">
+    doc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include-and-src" class="md-nav__link">
+    include and src
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch" class="md-nav__link">
+    launch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    test
   </a>
   
 </li>
@@ -6332,6 +6383,88 @@
       <a href="../topic-namespaces/" class="md-nav__link">
         Topic namespaces
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3_3_10" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topic-message-handling/">Topic message handling</a>
+          
+            <label for="__nav_7_3_3_10">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_3_3_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_3_10">
+          <span class="md-nav__icon md-icon"></span>
+          Topic message handling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topic-message-handling/supp-intra-process-comm/" class="md-nav__link">
+        [supplement] Obtain a received message through intra-process communication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topic-message-handling/supp-wait_set/" class="md-nav__link">
+        [supplement] Use rclcpp::WaitSet
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6998,8 +7131,57 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#directory-descriptions" class="md-nav__link">
-    Directory descriptions
+  <a href="#entire-structure" class="md-nav__link">
+    Entire structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-name" class="md-nav__link">
+    Package name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-folder" class="md-nav__link">
+    Package folder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config-and-schema" class="md-nav__link">
+    config and schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doc" class="md-nav__link">
+    doc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include-and-src" class="md-nav__link">
+    include and src
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch" class="md-nav__link">
+    launch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    test
   </a>
   
 </li>
@@ -7035,58 +7217,260 @@
 
 
 <div><h1 id="directory-structure">Directory structure<a class="headerlink" href="#directory-structure" title="Permanent link">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Under Construction</p>
-</div>
+<p>This document describes the directory structure of <abbr title="Robot Operating System">ROS</abbr> nodes within Autoware.</p>
+<p>We'll use the package <code>autoware_gnss_poser</code> as an example.</p>
 <h2 id="c-package">C++ package<a class="headerlink" href="#c-package" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>&lt;package_name&gt;
+<h3 id="entire-structure">Entire structure<a class="headerlink" href="#entire-structure" title="Permanent link">#</a></h3>
+<ul>
+<li>This is a reference on how the entire package might be structured.</li>
+<li>A package may not have all the directories shown here.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>autoware_gnss_poser
+├─ package.xml
+├─ CMakeLists.txt
+├─ README.md
+│
 ├─ config
-│   ├─ foo_ros.param.yaml
-│   └─ foo_non_ros.yaml
+│   ├─ gnss_poser.param.yaml
+│   └─ another_non_ros_config.yaml
+│
+├─ schema
+│   └─ gnss_poser.schema.json
+│
 ├─ doc
 │   ├─ foo_document.md
 │   └─ foo_diagram.svg
-├─ include
-│   └─ &lt;package_name&gt;
-│       └─ foo_public.hpp
-├─ launch
-│   ├─ foo.launch.xml
-│   └─ foo.launch.py
-├─ schema
-│   └─ foo_node.schema.json
+│
+├─ include  # for exporting headers
+│   └─ autoware
+│       └─ gnss_poser
+│           └─ exported_header.hpp
+│
 ├─ src
-│   ├─ foo_node.cpp
-│   ├─ foo_node.hpp
-│   └─ foo_private.hpp
-├─ test
-│   └─ test_foo.cpp
+│   ├─ include
+│   │   ├─ gnss_poser_node.hpp
+│   │   └─ foo.hpp
+│   ├─ gnss_poser_node.cpp
+│   └─ bar.cpp
+│
+├─ launch
+│   ├─ gnss_poser.launch.xml
+│   └─ gnss_poser.launch.py
+│
+└─ test
+    ├─ test_foo.hpp  # or place under an `include` folder here
+    └─ test_foo.cpp
+</code></pre></div>
+<h3 id="package-name">Package name<a class="headerlink" href="#package-name" title="Permanent link">#</a></h3>
+<ul>
+<li>All the packages in Autoware should be prefixed with <code>autoware_</code>.</li>
+<li>Even if the package is exports a node, the package name <strong>should NOT</strong> have the <code>_node</code> suffix.</li>
+<li>The package name should be in <code>snake_case</code>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Package Name</th>
+<th>OK</th>
+<th>Alternative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_smoother</td>
+<td>❌</td>
+<td>autoware_path_smoother</td>
+</tr>
+<tr>
+<td>autoware_trajectory_follower_node</td>
+<td>❌</td>
+<td>autoware_trajectory_follower</td>
+</tr>
+<tr>
+<td>autoware_geography_utils</td>
+<td>✅</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="package-folder">Package folder<a class="headerlink" href="#package-folder" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>autoware_gnss_poser
 ├─ package.xml
 ├─ CMakeLists.txt
 └─ README.md
 </code></pre></div>
-<h3 id="directory-descriptions">Directory descriptions<a class="headerlink" href="#directory-descriptions" title="Permanent link">#</a></h3>
+<p>The package folder name should be the same as the package name.</p>
+<h4 id="packagexml"><code>package.xml</code><a class="headerlink" href="#packagexml" title="Permanent link">#</a></h4>
+<ul>
+<li>The package name should be entered within the <code>&lt;name&gt;</code> tag.<ul>
+<li><code>&lt;name&gt;autoware_gnss_poser&lt;/name&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="cmakeliststxt"><code>CMakeLists.txt</code><a class="headerlink" href="#cmakeliststxt" title="Permanent link">#</a></h4>
+<ul>
+<li>The <a href="https://cmake.org/cmake/help/latest/command/project.html"><code>project()</code></a> command should call the package name.<ul>
+<li><strong>Example:</strong> <code>project(autoware_gnss_poser)</code></li>
+</ul>
+</li>
+</ul>
+<h5 id="exporting-a-composable-node-component-executables">Exporting a composable node component executables<a class="headerlink" href="#exporting-a-composable-node-component-executables" title="Permanent link">#</a></h5>
+<p>For best practices and system efficiency, it is recommended to primarily use composable node components.</p>
+<p>This method facilitates easier deployment and maintenance within <abbr title="Robot Operating System">ROS</abbr> environments.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">ament_auto_add_library</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">SHARED</span>
+<span class="w">  </span><span class="s">src/gnss_poser_node.cpp</span>
+<span class="p">)</span>
+
+<span class="nb">rclcpp_components_register_node</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span>
+<span class="w">  </span><span class="s">PLUGIN</span><span class="w"> </span><span class="s2">"autoware::gnss_poser::GNSSPoserNode"</span>
+<span class="w">  </span><span class="s">EXECUTABLE</span><span class="w"> </span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="s">_node</span>
+<span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>If you are building:<ul>
+<li><strong>only a single composable node component,</strong> the executable name should start with <code>${PROJECT_NAME}</code></li>
+<li><strong>multiple composable node components,</strong> the executable name is up to the developer.</li>
+</ul>
+</li>
+<li>All composable node component executables should have the <code>_node</code> suffix.</li>
+</ul>
+<h5 id="exporting-a-standalone-node-executable-without-composition-discouraged-for-most-cases">Exporting a standalone node executable without composition <em>(discouraged for most cases)</em><a class="headerlink" href="#exporting-a-standalone-node-executable-without-composition-discouraged-for-most-cases" title="Permanent link">#</a></h5>
+<p>Use of standalone executables <strong>should be limited</strong> to cases where specific needs such as debugging or tooling are required.</p>
+<p><a href="#exporting-a-composable-node-component-executables">Exporting a composable node component executables</a> is generally preferred for standard operational use due its flexibility and scalability within the <abbr title="Robot Operating System">ROS</abbr> ecosystem.</p>
+<p>Assuming:</p>
+<ul>
+<li><code>src/gnss_poser.cpp</code> has the <code>GNSSPoserNode</code> class.</li>
+<li><code>src/gnss_poser_node.cpp</code> has the <code>main</code> function.</li>
+<li>There is no composable node component registration.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">ament_auto_add_library</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">SHARED</span>
+<span class="w">  </span><span class="s">src/gnss_poser.cpp</span>
+<span class="p">)</span>
+
+<span class="nb">ament_auto_add_executable</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="s">_node</span><span class="w"> </span><span class="s">src/gnss_poser_node.cpp</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>The node executable:<ul>
+<li>should have <code>_node</code> suffix.</li>
+<li>should start with `${PROJECT_NAME}</li>
+</ul>
+</li>
+</ul>
+<h3 id="config-and-schema"><code>config</code> and <code>schema</code><a class="headerlink" href="#config-and-schema" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>autoware_gnss_poser
+│─ config
+│   ├─ gnss_poser.param.yaml
+│   └─ another_non_ros_config.yaml
+└─ schema
+    └─ gnss_poser.schema.json
+</code></pre></div>
 <h4 id="config"><code>config</code><a class="headerlink" href="#config" title="Permanent link">#</a></h4>
-<p>Place configuration files such as node parameters.
-For <abbr title="Robot Operating System">ROS</abbr> parameters, use the extension <code>.param.yaml</code>.
-For non-<abbr title="Robot Operating System">ROS</abbr> parameters, use the extension <code>.yaml</code>.</p>
-<p>Rationale: Since <abbr title="Robot Operating System">ROS</abbr> parameters files are type-sensitive, they should not be the target of some code formatters and linters. In order to distinguish the file type, we use different file extensions.</p>
-<h4 id="doc"><code>doc</code><a class="headerlink" href="#doc" title="Permanent link">#</a></h4>
-<p>Place document files and link from README.</p>
-<h4 id="include"><code>include</code><a class="headerlink" href="#include" title="Permanent link">#</a></h4>
-<p>Place header files exposed to other packages. Do not place files directly under the <code>include</code> directory, but place files under the directory with the package name.
-This directory is used for mostly library headers. Note that many headers do not need to be placed here. It is enough to place the headers under the <code>src</code> directory.</p>
-<p>Reference: <a href="https://docs.ros.org/en/humble/How-To-Guides/Ament-CMake-Documentation.html#adding-targets">https://docs.ros.org/en/humble/How-To-Guides/Ament-CMake-Documentation.html#adding-targets</a></p>
-<h4 id="launch"><code>launch</code><a class="headerlink" href="#launch" title="Permanent link">#</a></h4>
-<p>Place launch files (<code>.launch.xml</code> and <code>.launch.py</code>).</p>
+<ul>
+<li><abbr title="Robot Operating System">ROS</abbr> parameters uses the extension <code>.param.yaml</code>.</li>
+<li>Non-<abbr title="Robot Operating System">ROS</abbr> parameters use the extension <code>.yaml</code>.</li>
+</ul>
+<p><strong>Rationale:</strong> Different linting rules are used for <abbr title="Robot Operating System">ROS</abbr> parameters and non-<abbr title="Robot Operating System">ROS</abbr> parameters.</p>
 <h4 id="schema"><code>schema</code><a class="headerlink" href="#schema" title="Permanent link">#</a></h4>
-<p>Place parameter definition files. See <a href="../parameters/">parameters</a> for details.</p>
-<h4 id="src"><code>src</code><a class="headerlink" href="#src" title="Permanent link">#</a></h4>
-<p>Place source files and private header files.</p>
-<h4 id="test"><code>test</code><a class="headerlink" href="#test" title="Permanent link">#</a></h4>
+<p>Place parameter definition files. See <a href="../parameters/">Parameters</a> for details.</p>
+<h3 id="doc"><code>doc</code><a class="headerlink" href="#doc" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>autoware_gnss_poser
+└─ doc
+    ├─ foo_document.md
+    └─ foo_diagram.svg
+</code></pre></div>
+<p>Place documentation files and link them from the README file.</p>
+<h3 id="include-and-src"><code>include</code> and <code>src</code><a class="headerlink" href="#include-and-src" title="Permanent link">#</a></h3>
+<ul>
+<li>Unless you specifically need to export headers, you shouldn't have a <code>include</code> directory under the package directory.</li>
+<li>For most cases, follow <a href="#not-exporting-headers">Not exporting headers</a>.</li>
+<li>Library packages that export headers may follow <a href="#exporting-headers">Exporting headers</a>.</li>
+</ul>
+<h4 id="not-exporting-headers">Not exporting headers<a class="headerlink" href="#not-exporting-headers" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>autoware_gnss_poser
+└─ src
+    ├─ include
+    │   ├─ gnss_poser_node.hpp
+    │   └─ foo.hpp
+    │─ gnss_poser_node.cpp
+    └─ bar.cpp
+
+OR
+
+autoware_gnss_poser
+└─ src
+    ├─ gnss_poser_node.hpp
+    ├─ gnss_poser_node.cpp
+    ├─ foo.hpp
+    └─ bar.cpp
+</code></pre></div>
+<ul>
+<li>The source file exporting the node should:<ul>
+<li>have <code>_node</code> suffix.<ul>
+<li><strong>Rationale:</strong> To distinguish from other source files.</li>
+</ul>
+</li>
+<li><strong>NOT</strong> have <code>autoware_</code> prefix.<ul>
+<li><strong>Rationale:</strong> To avoid verbosity.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>See <a href="../../class-design.md">Classes</a> for more details on how to construct <code>gnss_poser_node.hpp</code> and <code>gnss_poser_node.cpp</code> files.</li>
+<li>It is up to developer how to organize the source files under <code>src</code>.<ul>
+<li><strong>Note:</strong> The <code>include</code> folder under <code>src</code> is optional.</li>
+</ul>
+</li>
+</ul>
+<h4 id="exporting-headers">Exporting headers<a class="headerlink" href="#exporting-headers" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>autoware_gnss_poser
+└─ include
+    └─ autoware
+        └─ gnss_poser
+            └─ exported_header.hpp
+</code></pre></div>
+<ul>
+<li><code>autoware_gnss_poser/include</code> folder should contain <strong>ONLY</strong> the <code>autoware</code> folder.<ul>
+<li><strong>Rationale:</strong> When installing <abbr title="Robot Operating System">ROS</abbr> debian packages, the headers are copied to the <code>/opt/ros/$ROS_DISTRO/include/</code> directory. This structure is used to avoid conflicts with non-Autoware packages.</li>
+</ul>
+</li>
+<li><code>autoware_gnss_poser/include/autoware</code> folder should contain <strong>ONLY</strong> the <code>gnss_poser</code> folder.<ul>
+<li><strong>Rationale:</strong> Similarly, this structure is used to avoid conflicts with other packages.</li>
+</ul>
+</li>
+<li><code>autoware_gnss_poser/include/autoware/gnss_poser</code> folder should contain the header files to be exported.</li>
+</ul>
+<p><strong>Note:</strong> If <code>ament_auto_package()</code> command is used in the <code>CMakeLists.txt</code> file and <code>autoware_gnss_poser/include</code> folder exists,
+this <code>include</code> folder will be exported to the <code>install</code> folder as part of <a href="https://github.com/ament/ament_cmake/blob/79cc237f8eb819edf4c1c624b56451e0a05a45f8/ament_cmake_auto/cmake/ament_auto_package.cmake#L62-L66">ament_auto_package.cmake</a></p>
+<p><strong>Reference:</strong> <a href="https://docs.ros.org/en/humble/How-To-Guides/Ament-CMake-Documentation.html#adding-targets">https://docs.ros.org/en/humble/How-To-Guides/Ament-CMake-Documentation.html#adding-targets</a></p>
+<h3 id="launch"><code>launch</code><a class="headerlink" href="#launch" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>autoware_gnss_poser
+└─ launch
+    ├─ gnss_poser.launch.xml
+    └─ gnss_poser.launch.py
+</code></pre></div>
+<ul>
+<li>You may have multiple launch files here.</li>
+<li>Unless you have a specific reason, use the <code>.launch.xml</code> extension.<ul>
+<li><strong>Rationale:</strong> While the <code>.launch.py</code> extension is more flexible, it comes with a readability cost.</li>
+</ul>
+</li>
+<li>Avoid <code>autoware_</code> prefix in the launch file names.<ul>
+<li><strong>Rationale:</strong> To avoid verbosity.</li>
+</ul>
+</li>
+</ul>
+<h3 id="test"><code>test</code><a class="headerlink" href="#test" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>autoware_gnss_poser
+└─ test
+    ├─ test_foo.hpp  # or place under an `include` folder here
+    └─ test_foo.cpp
+</code></pre></div>
 <p>Place source files for testing. See <a href="../../../testing-guidelines/unit-testing/">unit testing</a> for details.</p>
 <h2 id="python-package">Python package<a class="headerlink" href="#python-package" title="Permanent link">#</a></h2>
-<p>T.B.D.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Under Construction</p>
+</div>
 <!-- prettier-ignore --></div>
 
 

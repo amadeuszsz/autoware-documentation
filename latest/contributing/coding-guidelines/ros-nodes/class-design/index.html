@@ -6136,6 +6136,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_3_3" id="__nav_7_3_3_label" tabindex="0">
@@ -6165,9 +6167,67 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Class design
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Class design
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#namespaces" class="md-nav__link">
+    Namespaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraries" class="md-nav__link">
+    Libraries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6281,6 +6341,88 @@
       <a href="../topic-namespaces/" class="md-nav__link">
         Topic namespaces
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3_3_10" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../topic-message-handling/">Topic message handling</a>
+          
+            <label for="__nav_7_3_3_10">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_3_3_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_3_10">
+          <span class="md-nav__icon md-icon"></span>
+          Topic message handling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topic-message-handling/supp-intra-process-comm/" class="md-nav__link">
+        [supplement] Obtain a received message through intra-process communication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topic-message-handling/supp-wait_set/" class="md-nav__link">
+        [supplement] Use rclcpp::WaitSet
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6932,6 +7074,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#namespaces" class="md-nav__link">
+    Namespaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraries" class="md-nav__link">
+    Libraries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6949,6 +7133,60 @@
 
 
 <div><h1 id="class-design">Class design<a class="headerlink" href="#class-design" title="Permanent link">#</a></h1>
+<p>We'll use the <code>autoware_gnss_poser</code> package as an example.</p>
+<h2 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">autoware</span><span class="o">::</span><span class="nn">gnss_poser</span>
+<span class="p">{</span>
+<span class="p">...</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace autoware::gnss_poser</span>
+</code></pre></div>
+<ul>
+<li>Everything should be under <code>autoware::gnss_poser</code> namespace.</li>
+<li>Closing braces must contain a comment with the namespace name. (Automated with <code>cpplint</code>)</li>
+</ul>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">#</a></h2>
+<h3 id="nodes">Nodes<a class="headerlink" href="#nodes" title="Permanent link">#</a></h3>
+<h4 id="gnss_poser_nodehpp"><code>gnss_poser_node.hpp</code><a class="headerlink" href="#gnss_poser_nodehpp" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">GNSSPoserNode</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">GNSSPoserNode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">NodeOptions</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">node_options</span><span class="p">);</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="gnss_poser_nodecpp"><code>gnss_poser_node.cpp</code><a class="headerlink" href="#gnss_poser_nodecpp" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">GNSSPoserNode</span><span class="o">::</span><span class="n">GNSSPoserNode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">NodeOptions</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">node_options</span><span class="p">)</span>
+<span class="o">:</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="s">"gnss_poser"</span><span class="p">,</span><span class="w"> </span><span class="n">node_options</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>The class name should be in <code>CamelCase</code>.</li>
+<li>Node classes should inherit from <code>rclcpp::Node</code>.</li>
+<li>The constructor must be marked be explicit.</li>
+<li>The constructor must take <code>rclcpp::NodeOptions</code> as an argument.</li>
+<li>Default node name:<ul>
+<li>should not have <code>autoware_</code> prefix.</li>
+<li>should <strong>NOT</strong> have <code>_node</code> suffix.<ul>
+<li><strong>Rationale:</strong> Node names are useful in the runtime. And output of <code>ros2 node list</code> will show only nodes anyway. Having <code>_node</code> is redundant.</li>
+</ul>
+</li>
+<li><strong>Example:</strong> <code>gnss_poser</code>.</li>
+</ul>
+</li>
+</ul>
+<h5 id="component-registration">Component registration<a class="headerlink" href="#component-registration" title="Permanent link">#</a></h5>
+<div class="highlight"><pre><span></span><code><span class="p">...</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace autoware::gnss_poser</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rclcpp_components/register_node_macro.hpp&gt;</span>
+<span class="n">RCLCPP_COMPONENTS_REGISTER_NODE</span><span class="p">(</span><span class="n">autoware</span><span class="o">::</span><span class="n">gnss_poser</span><span class="o">::</span><span class="n">GNSSPoserNode</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>The component should be registered at the end of the <code>gnss_poser_node.cpp</code> file, outside the namespaces.</li>
+</ul>
+<h3 id="libraries">Libraries<a class="headerlink" href="#libraries" title="Permanent link">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Under Construction</p>
