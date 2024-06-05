@@ -1,4 +1,4 @@
 nav:
   - index.md
-  - installation.md
-  - full-demo.md
+  - quick-start
+  - concepts
