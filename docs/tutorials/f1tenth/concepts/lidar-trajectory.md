@@ -69,7 +69,7 @@ If you want to use a simplified environment to run your ideas and test how this 
 
 Below images are depicting bolid (green square with blue arrow), lidar points (red points), reference trajectory (pink points).
 
-The first step is to connect all lidar points together. If the distance between consecutive points is larger then the thresholdand, divide the line into sections. Then reduce number of points in each section.
+The first step is to connect all the lidar points together. If the distance between consecutive points is larger then the threshold, divide the line into sections. Then reduce number of points in each section.
 
 ![Step 1](images/step_1.png)
 
@@ -85,7 +85,7 @@ Use bezier curve to smooth obtained path.
 
 ![Step 4](images/step_4.png)
 
-Add the ability to propoerly join two path sections. This is done by finding two closest points on both paths and connecting them together. At the same time rest of the points is ignored.
+Add the ability to properly join two path sections. This is done by finding two closest points on both paths and connecting them together. At the same time rest of the points is ignored.
 
 ![Step 5](images/step_5.png)
 
