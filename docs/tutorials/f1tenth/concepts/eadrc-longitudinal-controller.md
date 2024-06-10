@@ -4,7 +4,7 @@ Longitudianl controller takes velocity from way point as input and acceleration 
 
 To create ESO, the order of the object must be know. Result of identification are following:
 
-![alt text](result_of_identification.png){ width=50% height=50% }
+![alt text](result_of_identification.png){width=50% height=50%}
 
 The plot shows dynamics of integrating system, so the order of control object is 1 and order of is 2 (order of object + 1).
 
