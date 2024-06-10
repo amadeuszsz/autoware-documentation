@@ -1,4 +1,4 @@
-# YOLO RACECAR DETECTOR
+# Yolo racecar detector
 This is the ROS2 package used to detect f1tenth cars on the image captured from the camera. The inference is done using the [TensorRT](https://developer.nvidia.com/tensorrt) engine based on the [yolov8](https://github.com/ultralytics/ultralytics) architecture model. The method of performing the inference was inspired by [zed-custom-detector](https://github.com/stereolabs/zed-sdk/tree/master/object%20detection/custom%20detector/cpp/tensorrt_yolov5-v6-v8_onnx) and adapted for use with ROS2 and OpenCV.
 
 ## 1. Package usage guide
@@ -44,9 +44,11 @@ ros2 launch yolo_racecar_detector yolo_racecar_detector.launch.py
 
 
 ### Demo
-<video width="640" height="480" controls>
-  <source src="images/yolo_racecar_detector_inference_demo.mp4" type="video/mp4">
-</video>
+<figure>
+  <video width="720" height="480" controls>
+    <source src="https://github.com/Krawus/autoware-documentation/assets/61762937/fd6611f1-af91-4c8c-ae70-726e5335bb2e" type="video/mp4">
+  </video>
+</figure>
 
 ## 2. Using custom YOLOv8 model
 
@@ -102,7 +104,7 @@ During the simulation run, we obtain a visualization of the bounding boxes for e
 ```
 ![Screenshot from 2024-06-10 20-13-55](images/yolo_racecar_detector_bbox.png)
 
-## 2.2 Prepare Data
+### 2.2 Prepare Data
 The script `prepare_data.py` converts a dataset created in Unity to the COCO or YOLO format, which is used for training. Run the script with the following command:
 ```sh
 python prepare_data.py path/to/config.json
@@ -111,17 +113,17 @@ python prepare_data.py path/to/config.json
 - `--convert_to_yolo`: Add this flag if you want to convert the COCO dataset to YOLO format.
 - `--output_dir`: Specify the output directory where the converted files will be saved. Default is 'dataset'.
 - `--split_data`: Add this flag if you want to split your dataset into training, validation, and test sets.
-## 2.3 Training with Generated Data
+### 2.3 Training with Generated Data
 Once you have converted your dataset to  YOLO format, you can use the generated data for training models using the Ultralytics  framework. Follow the instructions in the [Ultralytics repository](https://github.com/ultralytics/ultralytics) to set up and train your models.
 
 
 <div style="display: flex; width: 100%; gap: 10px; margin: 10px;">
   <figure style="display: flex; flex: 1; flex-direction: column; align-items: center; width: 50%; margin: 0px;">
-    <img src="images/yolo_racecar_detector_labels.png" alt="Label" width="100%" />
+    <img src="../images/yolo_racecar_detector_labels.png" alt="Label" width="100%" />
     <figcaption><b>Label</b></figcaption>
   </figure>
   <figure style="display: flex; flex: 1; flex-direction: column; align-items: center; width: 50%; margin: 0px;">
-          <img src="images/yolo_racecar_detector_predict.png" alt="Predict" width="100%" />
+          <img src="../images/yolo_racecar_detector_predict.png" alt="Predict" width="100%" />
     <figcaption><b>Predict</b></figcaption>
   </figure>
 </div>
