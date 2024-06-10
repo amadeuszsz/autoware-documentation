@@ -13,16 +13,9 @@ python prepare_data.py path/to/config.json
 ## 2. Training with Generated Data
 Once you have converted your dataset to  YOLO format, you can use the generated data for training models using the Ultralytics  framework. Follow the instructions in the [Ultralytics repository](https://github.com/ultralytics/ultralytics) to set up and train your models.
 
-<div style="text-align: center;">
-  <figure style="display: inline-block; margin: 10px;">
-    <img src="images/labels.png" alt="Labels" width="40%" />
-    <figcaption>Labels</figcaption>
-  </figure>
-  <figure style="display: inline-block; margin: 10px;">
-    <img src="images/predict.png" alt="Predict" width="40%" />
-    <figcaption>Predict</figcaption>
-  </figure>
-</div>
 
+
+![Labels](images/labels.png)
+![Predict](images/predict.png)
 
 

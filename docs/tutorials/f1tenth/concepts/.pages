@@ -1,5 +1,4 @@
 nav:
   - map-build.md
   - trajectory-generate.md
-detection:
   - yolo_racecar_detector.md
