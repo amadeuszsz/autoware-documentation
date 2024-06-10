@@ -44,7 +44,8 @@ ros2 launch yolo_racecar_detector yolo_racecar_detector.launch.py
 
 
 ### Demo
-![inference_demo](images/inference_demo.mp4)
+https://github.com/Krawus/autoware-documentation/assets/61762937/fd6611f1-af91-4c8c-ae70-726e5335bb2e
+
 
 
 ## 2. Using custom YOLOv8 model
