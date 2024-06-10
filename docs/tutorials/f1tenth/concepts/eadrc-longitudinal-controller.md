@@ -4,7 +4,7 @@ Longitudianl controller takes speed from way point as input and acceleration as 
 
 To create ESO, the order of the object must be know. Result of identification are following:
 
-
+![alt text](result_of_identification.png)
 
 identyfikacja
 
