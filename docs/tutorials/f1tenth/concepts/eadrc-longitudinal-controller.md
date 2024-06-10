@@ -1,1 +1,1 @@
-Test
+Error based ADRC (Active Disturbance Rejection Control) is an control method that estimate extended state of object. That's state consist of total disturbance and state of the object. In the error base concept, state of object is error and its derivatives up to the number of object order.  
