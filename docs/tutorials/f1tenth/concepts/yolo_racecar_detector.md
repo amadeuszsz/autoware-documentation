@@ -44,6 +44,7 @@ ros2 launch yolo_racecar_detector yolo_racecar_detector.launch.py
 
 
 ### Demo
+![inference_demo](images/inference_demo.mp4)
 
 
 ## 2. Using custom YOLOv8 model
