@@ -45,6 +45,7 @@ ros2 launch yolo_racecar_detector yolo_racecar_detector.launch.py
 
 ### Demo
 <iframe width="1705" height="968" src="https://www.youtube.com/embed/NwCGJqMBUoY" title="yolo racecar detector inference demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 2. Using custom YOLOv8 model
 
 ### 2.1 Collecting dataset
