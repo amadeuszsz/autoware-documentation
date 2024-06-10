@@ -44,8 +44,8 @@ ros2 launch yolo_racecar_detector yolo_racecar_detector.launch.py
 
 
 ### Demo
-<video width="630" height="480" controls>
-  <source src="yolo_racecar_detector_inference_demo.mp4" type="video/mp4/">
+<video width="640" height="480" controls>
+  <source src="images/yolo_racecar_detector_inference_demo.mp4" type="video/mp4">
 </video>
 
 ## 2. Using custom YOLOv8 model
