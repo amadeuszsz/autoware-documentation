@@ -1,4 +1,4 @@
-# yolo_racecar_detector
+# YOLO RACECAR DETECTOR
 This is the ROS2 package used to detect f1tenth cars on the image captured from the camera. The inference is done using the [TensorRT](https://developer.nvidia.com/tensorrt) engine based on the [yolov8](https://github.com/ultralytics/ultralytics) architecture model. The method of performing the inference was inspired by [zed-custom-detector](https://github.com/stereolabs/zed-sdk/tree/master/object%20detection/custom%20detector/cpp/tensorrt_yolov5-v6-v8_onnx) and adapted for use with ROS2 and OpenCV.
 
 ## 1. Package usage guide
@@ -44,7 +44,6 @@ ros2 launch yolo_racecar_detector yolo_racecar_detector.launch.py
 
 
 ### Demo
-![inference_demo](images/inference_demo.mp4)
 
 
 ## 2. Using custom YOLOv8 model
@@ -55,15 +54,15 @@ To train the YOLOv8 network for the F1Tenth car detection task, it was necessary
 In the first step, 36 F1Tenth cars were placed on the provided map containing the racetrack.
 In order to avoid potential overfitting of the network to a given background, modifications were made to the sky texture and track surface during data collection.
 
-![map](https://hackmd.io/_uploads/HJxSe6VHA.png)
+![map](images/yolo_racecar_detector_racetrack.png)
 #### Labeling
 The Labelling module from the Perception package was used for data labeling. Each car model was assigned the label "car" through the creation of a Label Configuration.
 
-![Screenshot from 2024-06-10 20-08-20](https://hackmd.io/_uploads/rktEZp4HC.png)
+![Screenshot from 2024-06-10 20-08-20](images/yolo_racecar_detector_label.png)
 
 Next, a Perception Camera script was assigned to the front-facing camera of our vehicle, allowing it to capture frames at specified intervals during the simulation (one in 30 frames was saved). With the appropriate script configuration and linking to the previously created Label Configuration, each image is saved and properly labeled in a corresponding JSON file.
 
-![Screenshot from 2024-06-10 20-11-09](https://hackmd.io/_uploads/Hy66bpESA.png)
+![Screenshot from 2024-06-10 20-11-09](images/yolo_racecar_detector_camera.png)
 ### Collecting Data
 During the simulation run, we obtain a visualization of the bounding boxes for each car placed on the map. These bounding boxes are saved in the following format:
 ```json
@@ -99,13 +98,9 @@ During the simulation run, we obtain a visualization of the bounding boxes for e
   ]
 }
 ```
-![Screenshot from 2024-06-10 20-13-55](https://hackmd.io/_uploads/SJMOM6VSR.png)
+![Screenshot from 2024-06-10 20-13-55](images/yolo_racecar_detector_bbox.png)
 
-
-
-
-
-## 3. Prepare Data
+## 2.2 Prepare Data
 The script `prepare_data.py` converts a dataset created in Unity to the COCO or YOLO format, which is used for training. Run the script with the following command:
 ```sh
 python prepare_data.py path/to/config.json
@@ -114,19 +109,17 @@ python prepare_data.py path/to/config.json
 - `--convert_to_yolo`: Add this flag if you want to convert the COCO dataset to YOLO format.
 - `--output_dir`: Specify the output directory where the converted files will be saved. Default is 'dataset'.
 - `--split_data`: Add this flag if you want to split your dataset into training, validation, and test sets.
-## 4. Training with Generated Data
+## 2.3 Training with Generated Data
 Once you have converted your dataset to  YOLO format, you can use the generated data for training models using the Ultralytics  framework. Follow the instructions in the [Ultralytics repository](https://github.com/ultralytics/ultralytics) to set up and train your models.
-
-
 
 
 <div style="display: flex; width: 100%; gap: 10px; margin: 10px;">
   <figure style="display: flex; flex: 1; flex-direction: column; align-items: center; width: 50%; margin: 0px;">
-    <img src="https://hackmd.io/_uploads/S1BB6nESC.png" alt="Zdjęcie 2" width="100%" />
+    <img src="images/yolo_racecar_detector_labels.png" alt="Label" width="100%" />
     <figcaption><b>Label</b></figcaption>
   </figure>
   <figure style="display: flex; flex: 1; flex-direction: column; align-items: center; width: 50%; margin: 0px;">
-          <img src="https://hackmd.io/_uploads/SJBBTn4SA.png" alt="Zdjęcie 1" width="100%" />
+          <img src="images/yolo_racecar_detector_predict.png" alt="Predict" width="100%" />
     <figcaption><b>Predict</b></figcaption>
   </figure>
 </div>
