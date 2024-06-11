@@ -19,6 +19,45 @@ The main parts of the project are:
 
 ## Data fusion
 
+For data fusion the `cone_localization` node is used.
+It utilizes data from the camera, lidar, the car's current position, and cones detection information within the image.
+
+The node employs topic synchronization using the message_filters package.
+In this application, the package uses approximate_synchronizer.
+It operates by caching messages from various topics and matching them based on timestamps.
+
+Lidar data is integrated with camera images. Based on the bounding box information received, a decision is made regarding which lidar measurements are included in the received labels.
+Using the car's current position and the set of lidar measurements assigned to each cone, the global position of each obstacle on the track is determined.
+
+A Kalman filter is employed to improve obstacle mapping and mitigate the impact of overstated measurements.
+
+A buffer storing cones was utilized.
+This allows the position of a detected obstacle to be updated on the map with its newly detected position whenever it is detected again.
+
+### Subscribed Topics
+| Name                                   | Type                                         | Description                                          |
+| -------------------------------------- | -------------------------------------------- | ---------------------------------------------------- |
+| `/output bboxes`                       | cones_interfaces::msg::Cones                 | Cones bouinding boxes                                |
+| `/output image`                        | sensor_msgs::msg::Image                      | Image with labeled cones                             |
+| `/sensing/lidar/scan`                  | sensor_msgs::msg::LaserScan                  | Lidar scan                                           |
+| `/localization/cartographer/pose`      | geometry_msgs::msg::PoseStamped              | Pose of the vehicle                                  |
+| `/sensing/camera/camera info`          | sensor_msgs::msg::CameraInfo                 | Information about camera parameters                  |
+| `/map `                                | nav_msgs::msg::OccupancyGrid                 | Occupancygrid map                                    |
+
+### Published Topics
+| Name                                            | Type                                         | Description                                          |
+| ----------------------------------------------- | -------------------------------------------- | ---------------------------------------------------- |
+| `/output_map`                                   | nav_msgs::msg::OccupancyGrid                 | Occupancy grid map with virtual obstacles            |
+
+### Parameters
+| Name                         | Type   | Description                                                                                                                          |
+| ---------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `cones_number_map`           | int    | The number of cones that will be taken into account when determining the obstacles                                                   |
+| `cones_shift_factor`         | float  | Angular displacement of lidar data                                                                                                   |
+| `cones_distance_measurement` | float  | The distance of the car from the bollard at which the position of the bollard will be recorded on the map                            |
+| `kalman_on`                  | bool   | The value that determines whether kalman filtration will be carried out                                                              |
+| `kalman_meas_variance`       | float  | Magnitude of the measurement variance                                                                                                |
+
 ## Planner
 To plan a trajectory around the cones, the `cone_planner` node is used.
 This node uses the *Informed RRT\** algorithm implemented in `freespace_planning_algorithms` package.
