@@ -1,18 +1,18 @@
-# Error based ADRC logitudinal controller
+# Error-based ADRC logitudinal controller
 
-Error based ADRC (Active Disturbance Rejection Control) is an control method that estimate extended state of object. That's state consist of total disturbance and state of the object. In the error base concept, state of object is error and its derivatives up to the number of object order.  
+Error-based ADRC (Active Disturbance Rejection Control) is a control method that estimates the extended state of an object. This state consists of the total disturbance and the state of the object. In the error-based concept, the state of the object is represented by the error and its derivatives up to the order of the object. 
 
-Longitudianl controller takes velocity from way point as input and acceleration as output (control signal). 
+Longitudianl controller takes velocity from waypoint as input and produces acceleration as output (control signal).
 
-To create ESO, the order of the object must be know. Result of identification are following:
+To create an ESO, the order of the object must be known. The results of the identification are as follows:
 
 <img src="result_of_identification.png" alt="Opis obrazka" style="width:50%;">
 
-The plot shows dynamics of integrating system, so the order of control object is 1 and order of is 2 (order of object + 1).
+The plot shows the dynamics of an integrating system, so the order of the control object is 1 and the order of the ESO is 2 (order of the object + 1).
 
-Controller consist of one main class and second that are responsible of extended state observer. ESO class have method to initialize obserwer, calculate state of ESO and helper functions. Main class despite of the common function for logitudinal controller, have function to calculate control signal. 
+The controller consists of one main class and a second class that is responsible for the extended state observer (ESO). The ESO class has methods to initialize the observer, calculate the state of the ESO and provide helper functions. The main class, in addition to common functions for the longitudinal controller, has a function to calculate the control signal.
 
-There are some plots which compare performance eADRC and PID longitudinal controller.
+There are some plots that compare the performance of the eADRC and PID longitudinal controllers.
 
 Error based controller ADRC:
 
