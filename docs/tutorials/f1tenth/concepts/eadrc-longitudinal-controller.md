@@ -1,3 +1,5 @@
+# Error based ADRC logitudinal controller
+
 Error based ADRC (Active Disturbance Rejection Control) is an control method that estimate extended state of object. That's state consist of total disturbance and state of the object. In the error base concept, state of object is error and its derivatives up to the number of object order.  
 
 Longitudianl controller takes velocity from way point as input and acceleration as output (control signal). 
@@ -14,9 +16,9 @@ There are some plots which compare performance eADRC and PID longitudinal contro
 
 Error based controller ADRC:
 
-<img src="result_of_identification.png" style="width:50%;">
+<img src="eadrc_02_6_1.png" style="width:50%;">
 
 PID controller:
 
-<img src="result_of_identification.png" style="width:50%;">
+<img src="pid.png" style="width:50%;">
 
