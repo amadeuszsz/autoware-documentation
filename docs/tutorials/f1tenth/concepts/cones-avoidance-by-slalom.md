@@ -1,11 +1,21 @@
-# Cones avoidance by slalom
+# Cones' avoidance by slalom
 
 ## Problem overview
+The aim of the project was to design a cones' avoidance system for the F1TENTH car using autoware.
+The system decides from which side the cone should be avoided based on its color (blue from the right side and yellow from the left).
+The shape and the colors of the cones have been taken from Formula Student competition.
+The project uses a modified version of the f1tenth map with cones added onto the track.
+
+The main parts of the project are:
+
+- **perception** - detecting the cones and their colors,
+- **data fusion** - sensor fusion using data from camera and lidar to get the cones' positions,
+- **planning** - planning the local path to avoid the cones.
 
 ## System schematic
 ![Cones avoidance schematic](./assets/cones_avoidance_schematic.png)
 
-## Cones detection
+## Perception
 
 ## Data fusion
 
