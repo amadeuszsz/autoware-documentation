@@ -13,8 +13,10 @@ Controller consist of one main class and second that are responsible of extended
 There are some plots which compare performance eADRC and PID longitudinal controller.
 
 Error based controller ADRC:
+
 <img src="result_of_identification.png" style="width:50%;">
 
 PID controller:
+
 <img src="result_of_identification.png" style="width:50%;">
 
