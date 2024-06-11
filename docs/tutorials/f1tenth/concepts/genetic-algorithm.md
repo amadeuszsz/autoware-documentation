@@ -4,6 +4,8 @@ This is project for avoiding obstacles using genetic algorithm.
 ## Launching the demo
 For installation refer to [Installation](../../../installation/index.md). Remember to change branch to `f1teenth`.
 
+Link to the map with obstacles: https://drive.google.com/file/d/17fIb3UIJZGlo_Nw5vbERuh-iuh7Or_hv/view?usp=sharing
+
 To run code properly following lines needs to be modified in launcher/f1tenth_launch/launch/components/f1tenth_control.launch.py :
 ```python
 ('output/control_cmd', '/control/command/control_cmd2'),
