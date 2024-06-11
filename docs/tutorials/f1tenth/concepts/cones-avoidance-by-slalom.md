@@ -3,6 +3,7 @@
 ## Problem overview
 
 ## System schematic
+![Cones avoidance schematic](./assets/cones_avoidance_schematic.png)
 
 ## Cones detection
 
@@ -11,6 +12,17 @@
 ## Planner
 To plan a trajectory around the cones, the `cone_planner` node is used.
 This node uses the *Informed RRT\** algorithm implemented in `freespace_planning_algorithms` package.
+
+The planner node runs an `onTimer` callback at rate specified by the `update_rate` parameter.
+This callback checks if the replanning is needed and if it is, it runs the RRT planner.
+Conitions on which the replanning is performed area:
+
+- there is no planned trajectory,
+- the vehicle is near the goal position,
+- new obstacle was found and it intersects the planned trajectory,
+- distance between vehicle and trajectory is larger than threshold specified by the `th_course_out_distance_m` parameter.
+
+When theres is no planned trajectory or the planner is during replanning, the vehicle is stopped.
 
 ### Subscribed Topics
 | Name                                   | Type                                         | Description                                          |
