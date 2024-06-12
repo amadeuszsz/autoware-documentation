@@ -105,3 +105,9 @@ Example configuration can look as follows:
     ground_truth_topic: "/localization/cartographer/pose"
     trajectory_topic:  "/planning/racing_planner/trajectory"
 ```
+
+## Results
+
+![path](./images/path.png)
+
+[![video](https://img.youtube.com/vi/in6zMdxMCaY/0.jpg)](https://www.youtube.com/watch?v=in6zMdxMCaY)
