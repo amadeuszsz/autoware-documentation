@@ -12,6 +12,8 @@ The main parts of the project are:
 - **data fusion** - sensor fusion using data from camera and lidar to get the cones' positions,
 - **planning** - planning the local path to avoid the cones.
 
+This task needs simulation environment, such can be found at: [google drive](https://drive.google.com/file/d/120lfWwmwZQP8B92OaJJC9ZP7CW3OX9RW/view?usp=sharing)
+
 ## System schematic
 ![Cones avoidance schematic](./assets/cones_avoidance_schematic.png)
 
