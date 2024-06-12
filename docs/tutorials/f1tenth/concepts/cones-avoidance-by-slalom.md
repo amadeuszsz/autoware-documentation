@@ -36,6 +36,7 @@ Custom message types BoundingBox and Cones are located in `cones_interfaces` pac
 This package is supplied with trained model in .onnx format, when node is executed for the first time, TensorRT .engine file is forced to generate, since it is hardware specific, then it continues inference in loop
 
 Package repository is available [here](https://github.com/BartlomiejGasyna/cones_detect).
+
 ## Data fusion
 
 For data fusion the `cone_localization` node is used.
@@ -56,12 +57,12 @@ This allows the position of a detected obstacle to be updated on the map with it
 ### Subscribed Topics
 | Name                                   | Type                                         | Description                                          |
 | -------------------------------------- | -------------------------------------------- | ---------------------------------------------------- |
-| `/output bboxes`                       | cones_interfaces::msg::Cones                 | Cones bouinding boxes                                |
-| `/output image`                        | sensor_msgs::msg::Image                      | Image with labeled cones                             |
+| `/output_bboxes`                       | cones_interfaces::msg::Cones                 | Cones bouinding boxes                                |
+| `/output_image`                        | sensor_msgs::msg::Image                      | Image with labeled cones                             |
 | `/sensing/lidar/scan`                  | sensor_msgs::msg::LaserScan                  | Lidar scan                                           |
 | `/localization/cartographer/pose`      | geometry_msgs::msg::PoseStamped              | Pose of the vehicle                                  |
-| `/sensing/camera/camera info`          | sensor_msgs::msg::CameraInfo                 | Information about camera parameters                  |
-| `/map `                                | nav_msgs::msg::OccupancyGrid                 | Occupancygrid map                                    |
+| `/sensing/camera/camera_info`          | sensor_msgs::msg::CameraInfo                 | Information about camera parameters                  |
+| `/map`                                 | nav_msgs::msg::OccupancyGrid                 | Occupancygrid map                                    |
 
 ### Published Topics
 | Name                                            | Type                                         | Description                                          |
@@ -129,3 +130,4 @@ When theres is no planned trajectory or the planner is during replanning, the ve
 | `rrt_neighbor_radius`        | float  | Radius in which checking if shorter path exist through other neighbor is performed                                                   |
 
 ## Demo of the working system
+Demo of the working system: [YouTube](https://youtu.be/g8tYqr2Q0ec)
