@@ -16,7 +16,24 @@ The main parts of the project are:
 ![Cones avoidance schematic](./assets/cones_avoidance_schematic.png)
 
 ## Perception
+Node `cones_detection` is designed to detect cones with respect to Formula Student regulations. This task has implemented YOLOv8 algorithm and NVidia TensorRT optimalization platform for acceleration purposes, utilizing GPU.
 
+Subscribed topic `/sensing/camera/image_raw` is only vision information.
+
+Node publishes topics:
+- `output_boxes` - position and color of detected cones in custom message format `Cones` which is a list of objects type `BoundingBox` 
+- `output_image` - optional (`show_image` parameter (Boolean)) - camera output with added Bounding Boxes
+
+Custom message types BoundingBox and Cones are located in `cones_interfaces` package, their representations are as follow:
+
+| Name        | .msg content                                           |
+|-------------|--------------------------------------------------------|
+| BoundingBox | std_msgs/Header header <br> BoundingBox[] bboxes            |
+| Cones       | float32 x1 <br> float32 y1<br>  float32 x2<br>  float32 y2 <br> char label |
+
+This package is supplied with trained model in .onnx format, when node is executed for the first time, TensorRT .engine file is forced to generate, since it is hardware specific, then it continues inference in loop
+
+Package repository is available [here](https://github.com/BartlomiejGasyna/cones_detect).
 ## Data fusion
 
 For data fusion the `cone_localization` node is used.
