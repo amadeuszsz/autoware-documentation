@@ -98,10 +98,10 @@ Parameters are:
 
 ### Graphs of training progress:
 
-![training_train_loss](./images/training_train_loss.png)
-![training_val_loss](./images/training_val_loss.png)\
-![training_val_MeanAbsoluteError](./images/training_val_MeanAbsoluteError.png)
-![training_val_MeanSquaredError](./images/training_val_MeanSquaredError.png)
+![training_train_loss](https://drive.google.com/uc?id=1ocHg6WQ0RVlaMRy1dqV-7vdqmbCmxY60)
+![training_val_loss](https://drive.google.com/uc?id=1B8tMjEj_D6eL4uA74DlyBCB074P7Buv-)
+![training_val_MeanAbsoluteError](https://drive.google.com/uc?id=1FMEtSqvG8rU1dCNEtS-aiLOl_f3MoJ9m)
+![training_val_MeanSquaredError](https://drive.google.com/uc?id=1P97p0PCNTjGr3m8iYPjCtzNRRAY0OO2x)
 
 
 ## Recording data (f1tenth_awsim_data_recorder)
@@ -138,6 +138,6 @@ Example configuration can look as follows:
 
 ## Results
 
-![path](./images/path.png)
+![path](https://drive.google.com/uc?id=1QJhVIzstqd__Oz3wGPACxJAX7k7uv3w8)
 
 [![video](https://img.youtube.com/vi/nCAl3mee5yo/0.jpg)](https://www.youtube.com/watch?v=nCAl3mee5yo)
