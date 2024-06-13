@@ -26,16 +26,16 @@ Then launch AWSIM
 ./autoware_awsim/AWSIM_v1.2.0.x86_64
 ```
 
-Next launch package grupa12 for processing lidar data:
+Next launch package process_lidar for processing lidar data:
 
 ```bash
-ros2 launch grupa12 grupa12.launch.py 
+ros2 launch process_lidar grupa12.launch.py 
 ```
 
-And final package grupa12_nnetwork for running the genetic algorithm
+And final package nnetwork for running the genetic algorithm
 
 ```bash
-ros2 launch grupa12_nnetwork grupa12_nnetwork.launch.py 
+ros2 launch nnetwork grupa12_nnetwork.launch.py 
 ```
 
 You should get effects like this:
