@@ -22,3 +22,6 @@ PID controller:
 
 [<img src="pid.png" style="width:50%;">](https://github.com/marcelq11/pngtoautoware/blob/main/pid.png?raw=true)
 
+The video that present working controller eADRC:
+
+https://www.youtube.com/watch?v=GPXSC7kA7KQ
