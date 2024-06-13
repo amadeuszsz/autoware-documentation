@@ -28,13 +28,14 @@ Finally you can press the `AUTO` button in the rviz and observe how the bolid st
 
 You should get effects like this:
 
-<video src="videos/lidar_trajectory_awsim.mp4" type="video/mp4" width="1000" controls>
+<video src="
+https://github.com/amadeuszsz/autoware-documentation/assets/66121303/7d6b27cb-8a29-4fc3-a3ba-ffaef5e96b49" type="video/mp4" width="1000" controls>
     Your browser does not support the video tag.
 </video>
 
 Below you can observe how the path is being planned.
 
-<video src="videos/lidar_trajectory_rviz.mp4" type="video/mp4" width="1000" controls>
+<video src="https://github.com/amadeuszsz/autoware-documentation/assets/66121303/3ec7b4c7-4b4c-4261-9189-8988c480cc81" type="video/mp4" width="1000" controls>
     Your browser does not support the video tag.
 </video>
 
@@ -46,20 +47,20 @@ Below you can observe how the path is being planned.
 The package can be found in src folder.
 
 <p align="center">
-  <img src="images/block_diagram.png" alt="Block diagram">
+  <img src="https://github.com/amadeuszsz/autoware-documentation/assets/66121303/b6e539ba-bc4e-4e2f-b74d-47a992ae1aac" alt="Block diagram">
 </p>
 
 ### Input
 
-| Name         | Type                  | Description  |
-| ------------ | --------------------- | ------------ |
-| `/sensing/lidar/scan` | sensor_msgs::msg::LaserScan | Data from lidar |
-| `/localization/kinematic_state` | nav_msgs::msg::Odometry | Odometry |
+| Name                            | Type                        | Description     |
+| ------------------------------- | --------------------------- | --------------- |
+| `/sensing/lidar/scan`           | sensor_msgs::msg::LaserScan | Data from lidar |
+| `/localization/kinematic_state` | nav_msgs::msg::Odometry     | Odometry        |
 
 ### Output
 
-| Name         | Type                  | Description  |
-| ------------ | --------------------- | ------------ |
+| Name                                  | Type                                         | Description        |
+| ------------------------------------- | -------------------------------------------- | ------------------ |
 | `/planning/racing_planner/trajectory` | autoware_auto_planning_msgs::msg::trajectory | Planned trajectory |
 
 
@@ -71,32 +72,32 @@ Below images are depicting bolid (green square with blue arrow), lidar points (r
 
 The first step is to connect all the lidar points together. If the distance between consecutive points is larger then the threshold, divide the line into sections. Then reduce number of points in each section.
 
-![Step 1](images/step_1.png)
+![step_1](https://github.com/amadeuszsz/autoware-documentation/assets/66121303/786418fb-0b47-4ca3-a1d4-d705944faa5f)
 
 Find normal vectors to the points.
 
-![Step 2](images/step_2.png)
+![step_2](https://github.com/amadeuszsz/autoware-documentation/assets/66121303/7586de88-3eb7-491a-bb53-d9f3c6910207)
 
 Connect the ends of normal vecotrs together.
 
-![Step 3](images/step_3.png)
+![step_3](https://github.com/amadeuszsz/autoware-documentation/assets/66121303/2d6de525-da24-42b5-a5bc-02cbcd76cb59)
 
 Use bezier curve to smooth obtained path.
 
-![Step 4](images/step_4.png)
+![step_4](https://github.com/amadeuszsz/autoware-documentation/assets/66121303/cb415963-fcce-44fa-b4fa-dae8888f0e33)
 
 Add the ability to properly join two path sections. This is done by finding two closest points on both paths and connecting them together. At the same time rest of the points is ignored.
 
-![Step 5](images/step_5.png)
+![step_5](https://github.com/amadeuszsz/autoware-documentation/assets/66121303/3dcf9619-1da2-45f6-904b-0eff4f944ca0)
 
 Next step is to recognize the intersections. To achieve that, every start and end point from each subsection is connected with each other. Then the triangle with biggest perimeter is found.
 
-![Step 6](images/step_6.png)
+![step_6](https://github.com/amadeuszsz/autoware-documentation/assets/66121303/09d58f6e-b77b-40d8-8b6b-ab13c19d6231)
 
 Left corner of this triangle is showing the path to the left, and right corner to the right. Here we can see two examples of trajectories planned on intersections.
 
-![Step 7](images/step_7.png)
-![Step 8](images/step_8.png)
+![step_7](https://github.com/amadeuszsz/autoware-documentation/assets/66121303/f5bcfca9-f27e-4afa-be9a-e2ab1080a914)
+![step_8](https://github.com/amadeuszsz/autoware-documentation/assets/66121303/7f0aa924-9531-4d54-91c8-dd9f131bb1e4)
 
 ## Future work
 
