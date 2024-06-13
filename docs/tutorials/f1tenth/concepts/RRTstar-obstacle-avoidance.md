@@ -1,7 +1,7 @@
 # Obstacle avoidance using RRT* algorithm
 [Screencast from 06-13-2024 01:19:01 AM.webm](https://github.com/Morgaliel/autoware-documentation/assets/58528111/a297c91b-8702-475d-bd4e-dae12c9a17f2)
 
-
+<div align="justify">
 The goal of this project is to add obstacle avoidance functionality to the F1TENTH autonomous car. Currently, the car follows a predefined trajectory based on the given .csv file. For this project, the input trajectory topic remapping is set to `/planning/racing_planner/avoidance/trajectory` instead of predefined `/planning/racing_planner/trajectory`. When an obstacle is detected, the car should avoid it by computing a new trajectory using the RRT* algorithm. The new trajectory is then published to the `/planning/racing_planner/avoidance/trajectory` topic (in other cases, the predefined path is published by the same topic).
 
 Obstacle detection is based on the data from the laser scanner and the occupancy grid map. The obstacle detection and avoidance algorithm is implemented in the `obstacle_detection` package. The detected obstacles are added to the occupancy grid map and published to the `/modified_map` topic. 
@@ -35,6 +35,7 @@ and for starting the autonomous mode with the X-box controller, one should make 
 ## Block diagram
 
 A block diagram below shows all used topics included in this project and the idea behind it.
+
 ![image (1)](https://github.com/Morgaliel/autoware-documentation/assets/58528111/c8ae752a-9514-44fc-ac47-c7ce4f5e3b66)
 
 
@@ -74,6 +75,7 @@ Between every 2 waypoints (in the `COLLISION_HORIZON` range), the algorithm divi
   - the needed Yaw angle is calculated based on an angle between the every 2 following points on the replanned trajectory
   - after reaching the goal node, it switches back to a preplanned trajectory
 - if no, it publishes the preplanned trajectory as the one that the car is currently following (on the same topic as above)
+
 ![Screenshot from 2024-06-13 00-26-59](https://github.com/Morgaliel/autoware-documentation/assets/58528111/24b6c883-7f2c-4622-bb96-83b4a8d70473)
 
 
@@ -94,6 +96,6 @@ Between every 2 waypoints (in the `COLLISION_HORIZON` range), the algorithm divi
  * float DETECTED_OBS_MARGIN - margin for the detected obstacle
  * float DETECTED_OBS_MARGIN_2 - margin for the new RRT* node samples
  * float VELOCITY - fixed velocity of the car during an obstacle avoidance maneuver
-
+</div>
 
 
