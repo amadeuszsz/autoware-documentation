@@ -98,7 +98,7 @@ During the simulation run, we obtain a visualization of the bounding boxes for e
   ]
 }
 ```
-![Screenshot from 2024-06-10 20-13-55](images/yolo_racecar_detector_bbox.png)
+![Screenshot from 2024-06-10 20-13-55](images/yolo_racecar_detector_bbox.png)![Screenshot from 2024-06-10 20-11-09](images/yolo_racecar_detector_camera.png)![Screenshot from 2024-06-10 20-11-09](images/yolo_racecar_detector_camera.png)rom 2024-06-10 20-13-55](images/yolo_racecar_detector_bbox.png)
 
 ### 2.2 Prepare Data
 The script `prepare_data.py` converts a dataset created in Unity to the COCO or YOLO format, which is used for training. Run the script with the following command:
