@@ -5,21 +5,29 @@ Linear Quadratic Regulator (LQR) Lateral Controller implementation for Autoware 
 The controller works by minimizing the lateral deviation and heading error of the vehicle from a given trajectory, providing precise steering commands to maintain the desired path.
 
 ## Installation
+
 ### Build
+
 ```bash
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release \
 -DCMAKE_EXPORT_COMPILE_COMMANDS=On --packages-up-to f1tenth_launch
 ```
+
 ### Params
+
 To ensure having that the vehicle speed is constant change `src/universe/external/trajectory_loader/src/trajectory_loader_node.cpp` line 80:
+
 ```
 From: trajectory_point.longitudinal_velocity_mps = point[3];
 To: trajectory_point.longitudinal_velocity_mps = 0.5;
 ```
+
 ### Additional repositories
+
 - [AgniechaP/autoware.universe](https://github.com/AgniechaP/autoware.universe/tree/feat/add_lqr_controller)
 - [AgniechaP/autoware](https://github.com/AgniechaP/autoware/tree/lqr-lateral-controller)
 - [AgniechaP/f1tenth_launch](https://github.com/AgniechaP/f1tenth_launch/tree/assignment)
+
 ## LQR implementation
 
 [Controller implementation repository.](https://github.com/mgmike1011/lqr_lateral_controller)
@@ -58,37 +66,39 @@ ros2 launch f1tenth_launch e2e_simulator.launch.py
 ### Sample lap
 
 <p align="center">
-<video src="media/lqr_lateral_controller.mp4" type="video/mp4" width="500" controls>
+<video src="https://github.com/mgmike1011/lqr_lateral_controller/assets/60261042/6b87b5f1-7994-44ca-98ad-4fbaf1bb2da0" type="video/mp4" width="500" controls>
     Your browser does not support the video tag.
 </video>
 </p>
 <p align="center">
-  <img src="media/img1.png" width="700"/>
+  <img src="https://github.com/mgmike1011/lqr_lateral_controller/assets/60261042/868a3cfc-155b-4239-aa43-7daf7e6c244c" width="700"/>
 </p>
 <p align="center">
-  <img src="media/img2.png" width="700"/>
+  <img src="https://github.com/mgmike1011/lqr_lateral_controller/assets/60261042/40ea4cb8-9009-4d68-933e-25091fc5b2a9" width="700"/>
 </p>
 
 ### On track
+
 <p align="center">
-  <img src="media/lqr_pose.png" width="700"/>
+  <img src="https://github.com/mgmike1011/lqr_lateral_controller/assets/60261042/938a1ccb-bde2-4aea-aaa3-e20c71f6544b" width="700"/>
 </p> 
 <p align="center">
-  <img src="media/lqr_orientation.png" width="700"/>
-</p> 
+  <img src="https://github.com/mgmike1011/lqr_lateral_controller/assets/60261042/05d4377d-8c51-439c-abeb-510c19a5729c" width="700"/>
+</p>
 
 ### Comparison to other base controllers
+
 In order to evaluate the obtained results, the operation of the algorithm was compared with others implemented in the repository. The results are summarized in a table:
 
-| Algorithm | Time per lap [s]|
-| --------- | ------------ |
-| lqr_lateral_controller | 113.558 |
-| pure_pursuit | 108.289 |
-| mpc | 112.148 |
+| Algorithm              | Time per lap [s] |
+| ---------------------- | ---------------- |
+| lqr_lateral_controller | 113.558          |
+| pure_pursuit           | 108.289          |
+| mpc                    | 112.148          |
 
 <p align="center">
-  <img src="media/pure_pursuit_pose.png" width="700"/>
-</p> 
+  <img src="https://github.com/mgmike1011/lqr_lateral_controller/assets/60261042/cdcac186-6623-43ec-880b-1ccbb21dcd39" width="700"/>
+</p>
 
 ## Externals
 
