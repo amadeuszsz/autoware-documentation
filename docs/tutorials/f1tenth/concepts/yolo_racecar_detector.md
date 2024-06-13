@@ -112,14 +112,18 @@ python prepare_data.py path/to/config.json
 ### 2.3 Training with Generated Data
 Once you have converted your dataset to  YOLO format, you can use the generated data for training models using the Ultralytics  framework. Follow the instructions in the [Ultralytics repository](https://github.com/ultralytics/ultralytics) to set up and train your models.
 
+![yolo_racecar_detector_predict](https://github.com/Krawus/autoware-documentation/assets/97474873/68fb3ee9-7386-4d10-8a95-6ffc85b8fc25)
+![yolo_racecar_detector_labels](https://github.com/Krawus/autoware-documentation/assets/97474873/c438706c-a2fb-4f62-b88a-18a8bad62d83)
+
+
 
 <div style="display: flex; width: 100%; gap: 10px; margin: 10px;">
   <figure style="display: flex; flex: 1; flex-direction: column; align-items: center; width: 50%; margin: 0px;">
-    <img src="../images/yolo_racecar_detector_labels.png" alt="Label" width="100%" />
+    <img src="https://github.com/Krawus/autoware-documentation/assets/97474873/68fb3ee9-7386-4d10-8a95-6ffc85b8fc25" alt="Label" width="100%" />
     <figcaption><b>Label</b></figcaption>
   </figure>
   <figure style="display: flex; flex: 1; flex-direction: column; align-items: center; width: 50%; margin: 0px;">
-          <img src="../images/yolo_racecar_detector_predict.png" alt="Predict" width="100%" />
+          <img src="https://github.com/Krawus/autoware-documentation/assets/97474873/c438706c-a2fb-4f62-b88a-18a8bad62d83" alt="Predict" width="100%" />
     <figcaption><b>Predict</b></figcaption>
   </figure>
 </div>
