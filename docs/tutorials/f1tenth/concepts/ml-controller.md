@@ -99,7 +99,7 @@ Parameters are:
 ### Graphs of training progress:
 
 ![training_train_loss](./images/training_train_loss.png)
-![training_val_loss](./images/training_val_loss.png)
+![training_val_loss](./images/training_val_loss.png)\
 ![training_val_MeanAbsoluteError](./images/training_val_MeanAbsoluteError.png)
 ![training_val_MeanSquaredError](./images/training_val_MeanSquaredError.png)
 
@@ -140,4 +140,4 @@ Example configuration can look as follows:
 
 ![path](./images/path.png)
 
-[![video](https://img.youtube.com/vi/in6zMdxMCaY/0.jpg)](https://www.youtube.com/watch?v=in6zMdxMCaY)
+[![video](https://img.youtube.com/vi/nCAl3mee5yo/0.jpg)](https://www.youtube.com/watch?v=nCAl3mee5yo)
