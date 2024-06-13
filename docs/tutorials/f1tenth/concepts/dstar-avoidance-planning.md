@@ -14,9 +14,9 @@ You can run demo project with
 ```bash
 ros2 launch f1tenth_launch e2e_simulator.launch.py
 ```
-By default, this command launches package `obstacle_dstar` with D* Lite planner. If you want to try A* planner you can specify a parameter `use_dstar` to false as was shown below
+By default, this command launches package `obstacle_astar` with D* Lite planner. If you want to try A* planner you can specify a parameter `use_dstar` to true as was shown below
 ```bash
-ros2 launch f1tenth_launch e2e_simulator.launch.py use_dstar:=false
+ros2 launch f1tenth_launch e2e_simulator.launch.py use_dstar:=true
 ```
 
 After that you can launch AWSIM with
@@ -35,18 +35,16 @@ If you don't have a pad u can try to use this command to change gear to DRIVE
 ros2 topic pub /control/command/gear_cmd autoware_auto_vehicle_msgs/msg/GearCommand {"command: 2"}
 ```
 
-You can see results of trajectory planning using A* below.
+You can see results of trajectory planning using A* under below link.
 
-<video src="videos/obstacle_astar.mp4" type="video/mp4" width="1000" controls>
-    Your browser does not support the video tag.
-</video>
+
+[![mq2](https://github.com/amadeuszsz/autoware-documentation/assets/126728897/2a665f9c-b30e-4e0f-a5e9-5ec7838c41a0)](https://youtu.be/mDZgydrJ3Kk)
 
 ## Block diagram
 
 A block diagram below shows all used topics and packages included in this project. 
-<p align="center">
-  <img src="images/block_diagram.png" alt="Block diagram">
-</p>
+
+![block_diagram](https://github.com/amadeuszsz/autoware-documentation/assets/126728897/f401ec99-a3d5-4476-8da6-6b9e90f9cfd9)
 
 Inside the `freespace_planning_algorithms` package there are multiple algorithms that can be used for path planning. The name of the algorithm to use can be specified in e.g.  `obstacle_dstar.param.yaml`. In case of D* you should use package `obstacle_dstar` and for A* you should use `obstacle_astar` package.
 
@@ -58,39 +56,39 @@ The package can be found in `src` folder.
 
 ### obstacle_detection
 
-| Topic                           | Type                         | Function                        | Description                                                   |
-|---------------------------------|------------------------------|---------------------------------|---------------------------------------------------------------|
+| Topic                           | Type                         | Function                        | Description                                                       |
+| ------------------------------- | ---------------------------- | ------------------------------- | ----------------------------------------------------------------- |
 | `/sensing/lidar/scan`           | sensor_msgs::msg::LaserScan  | Input scans from LIDAR          | Scans used to detect obstacles and add them to the occupancy grid |
-| `/map`                          | nav_msgs::msg::OccupancyGrid | Input original map              | Generated map from `cartographer`                               |
-| `/localization/kinematic_state` | nav_msgs::msg::Odometry      | Input odometry for localization | Original odometry                                             |
-| `/modified_map`                 | nav_msgs::msg::OccupancyGrid | Output map with obstacles       | Occupancy grid map with obstacles detected by LiDAR.          |
+| `/map`                          | nav_msgs::msg::OccupancyGrid | Input original map              | Generated map from `cartographer`                                 |
+| `/localization/kinematic_state` | nav_msgs::msg::Odometry      | Input odometry for localization | Original odometry                                                 |
+| `/modified_map`                 | nav_msgs::msg::OccupancyGrid | Output map with obstacles       | Occupancy grid map with obstacles detected by LiDAR.              |
 
 ### obstacle_astar
 
 | Topic                                           | Type                                         | Function                        | Description                                                                                   |
-|-------------------------------------------------|----------------------------------------------|---------------------------------|-----------------------------------------------------------------------------------------------|
-| `/planning/racing_planner/trajectory`             | autoware_auto_planning_msgs::msg::Trajectory | Input reference trajectory      | Trajectory that is originally subscribed                                                      |
+| ----------------------------------------------- | -------------------------------------------- | ------------------------------- | --------------------------------------------------------------------------------------------- |
+| `/planning/racing_planner/trajectory`           | autoware_auto_planning_msgs::msg::Trajectory | Input reference trajectory      | Trajectory that is originally subscribed                                                      |
 | `/modified_map`                                 | nav_msgs::msg::OccupancyGrid                 | Input map with obstacles        | Occupancy grid map with obstacles detected by LIDAR. It is made by obstacle_detection package |
 | `/localization/kinematic_state`                 | nav_msgs::msg::Odometry                      | Input odometry for localization | Original odometry                                                                             |
-| `/planning/racing_planner/avoidance/trajectory` | autoware_auto_planning_msgs::msg::Trajectory | Output modified trajectory      | Modified trajectory output by planner     
+| `/planning/racing_planner/avoidance/trajectory` | autoware_auto_planning_msgs::msg::Trajectory | Output modified trajectory      | Modified trajectory output by planner                                                         |
 
 ### obstacle_dstar
 
 | Topic                                           | Type                                         | Function                        | Description                                                                                   |
-|-------------------------------------------------|----------------------------------------------|---------------------------------|-----------------------------------------------------------------------------------------------|
-| `/planning/racing_planner/trajectory`             | autoware_auto_planning_msgs::msg::Trajectory | Input reference trajectory      | Trajectory that is originally subscribed                                                      |
+| ----------------------------------------------- | -------------------------------------------- | ------------------------------- | --------------------------------------------------------------------------------------------- |
+| `/planning/racing_planner/trajectory`           | autoware_auto_planning_msgs::msg::Trajectory | Input reference trajectory      | Trajectory that is originally subscribed                                                      |
 | `/modified_map`                                 | nav_msgs::msg::OccupancyGrid                 | Input map with obstacles        | Occupancy grid map with obstacles detected by LIDAR. It is made by obstacle_detection package |
 | `/localization/kinematic_state`                 | nav_msgs::msg::Odometry                      | Input odometry for localization | Original odometry                                                                             |
-| `/planning/racing_planner/avoidance/trajectory` | autoware_auto_planning_msgs::msg::Trajectory | Output modified trajectory      | Modified trajectory output by planner                                                         |                                     |
+| `/planning/racing_planner/avoidance/trajectory` | autoware_auto_planning_msgs::msg::Trajectory | Output modified trajectory      | Modified trajectory output by planner                                                         |  |
 
 ## Main components description
 
 ### Detecting obstacles
 One of the main functionalities is obstacle detection. It is done by `obstacle_detection` package. Based on the input LiDAR scans, odometry and occupancy grid from cartographer it detects map indices where the laser hits an obstacle. If at least `cell_count_th` (currently 2) scans lie in a certain grid cell, it is set as occupied (100). Modified map is then published to `/modified_map` topic and can be used by planning algorithms to find avoidance trajectory.
 
-| Original map | Modified map |
-| ------------ | ------------ |
-| ![Comparison of maps](images/original_map_detection.png) | ![Comparison of maps](images/modified_map_detection.png) |
+| Original map                                             | Modified map                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- |
+| ![original_map_detection](https://github.com/amadeuszsz/autoware-documentation/assets/126728897/8fb1fdc6-cd96-41e8-a8d4-688a8f8245fb) | ![modified_map_detection](https://github.com/amadeuszsz/autoware-documentation/assets/126728897/5aac5c8b-68fb-42a7-a308-f114d73ae741) |
 
 
 ### New trajectory planning - A*
@@ -106,25 +104,22 @@ One of the main functionalities is obstacle detection. It is done by `obstacle_d
 
 This loop ensures that if the car moves too close to the obstacle or the shape/position of the obstacle changes, the trajectory can be replanned over and over again to properly avoid collision. 
 
-
 <p align="center">
-  <img src="images/first_plan.png" alt="First obstacle", width="1000">
+  <img src="https://github.com/amadeuszsz/autoware-documentation/assets/126728897/8ec38c99-40f9-4eae-ad61-58d74077166f" alt="first_plan">
+</p>
+<p align="center">
+  <img src="https://github.com/amadeuszsz/autoware-documentation/assets/126728897/769287f6-b5e6-468f-85ea-fe58376dc9ec" alt="second_plan">
+</p>
+<p align="center">
+  <img src="https://github.com/amadeuszsz/autoware-documentation/assets/126728897/17877c26-281c-4e79-8cb4-3d3e06017c3d" alt="third_plan">
 </p>
 
-<p align="center">
-  <img src="images/second_plan.png" alt="Second obstacle", width="1000">
-</p>
-
-<p align="center">
-  <img src="images/third_plan.png" alt="Third obstacle", width="1000">
-</p>
 
 
 To help the process of implementation and debugging markers have been added to the project. Each marker is placed in the position of every node with regardless of the orienatation. All markers are stored in `MarkerArray`. To view them you need to add `/markers` topic in the rviz. One of the possible outcomes looks like this:
  
-<p align="center">
-  <img src="images/markers.png" alt="Visualization of markers", width="1000">
-</p>
+![markers](https://github.com/amadeuszsz/autoware-documentation/assets/126728897/3440f205-7ee4-423e-8dc2-b768f02c5dac)
+
 
 ### New trajectory planning - D*Lite
 Package `obstacle_dstar` is very similar to `obstacle_astar`, however it has a few modifications inside `onTimer` function. One of the biggest modification is planner initialization. In comparison to A*, which is a classic graph-based algorithm, D*Lite is an incremental algorithm. This implies that in every iteration when an obstacle is detected the planner must have an updated map. 
@@ -141,9 +136,7 @@ Performance of the car in this case is based on planner algorithm's speed and it
 
 Below there is a list of parameters that resulted in the best performance during testing.
 
-<p align="center">
-  <img src="images/params.png" alt="Visualization of markers", width="1000">
-</p>
+![params](https://github.com/amadeuszsz/autoware-documentation/assets/126728897/31d26f6b-d5f3-4f7e-b0f3-6075ab5dd82d)
 
 Parameter with the biggest impact was `vehicle_shape_margin_m`. By default  this parameter is set to `1.0` which means that in every position where a collision detection is computed the shape of a car is enlarged by 1 meter of circumference. This is crucial when a reference trajectory goes close to the walls because with a value of `1.0` it always detects collision no matter where the car is. 
 
@@ -156,14 +149,10 @@ Depending on the speed of the car and the size of the track you should also cons
 In case of the map from cartographer being imperfect a good idea might be to extract a partial occupancy grid map with a fixed window size. It might be helpful in specific places on a map such as open spaces or intersecions, where many nodes might be located and as a result the whole process might take longer. Extracting partial grid map can limit the size of free space to be planned so that the speed of an algorithm increases. The unknown parts in this partial grid map should be set as `-1`. 
 
 
-<p align="center">
-  <img src="images/turning_radius_2.png" alt="Visualization of markers", width="1000">
-</p>
+![turning_radius_2](https://github.com/amadeuszsz/autoware-documentation/assets/126728897/cf560f59-cb99-4814-b3c9-b23b157d395a)
 This trajectory is much sharper than the other because it has lower turning radius.
 
-<p align="center">
-  <img src="images/turning_radius_5.png" alt="Visualization of markers", width="1000">
-</p>
+![turning_radius_5](https://github.com/amadeuszsz/autoware-documentation/assets/126728897/914105ed-660f-403e-b5a2-d807379a4b6f)
 This trajectory is much smoother than the other because it has higher turning radius. Output path is also further from obstacles.
 
 
@@ -176,3 +165,13 @@ This trajectory is much smoother than the other because it has higher turning ra
 - Comparing D* and D* Lite performance,
 - Merginig `obstacle_dstar` and `obstacle_astar` packages into one common package for all planners,
 - Validating in different environmnents.
+
+### Credits
+
+Andrzej Ziemnicki
+
+Jeremiasz Wojciak
+
+Norbert Mostowski
+
+**Poznan University of Technology 2024**
