@@ -6,7 +6,7 @@ Longitudianl controller takes velocity from waypoint as input and produces accel
 
 To create an ESO, the order of the object must be known. The results of the identification are as follows:
 
-<img src="result_of_identification.png" alt="Opis obrazka" style="width:50%;">
+<img src="result_of_identification.png" alt="Description" style="width:50%;">
 
 The plot shows the dynamics of an integrating system, so the order of the control object is 1 and the order of the ESO is 2 (order of the object + 1).
 
@@ -16,9 +16,9 @@ There are some plots that compare the performance of the eADRC and PID longitudi
 
 Error based controller ADRC:
 
-<img src="eadrc_02_6_1.png" style="width:50%;">
+[<img src="eadrc_02_6_1.png" style="width:50%;">](https://github.com/marcelq11/pngtoautoware/blob/main/02_6_1.png?raw=true)
 
 PID controller:
 
-<img src="pid.png" style="width:50%;">
+[<img src="pid.png" style="width:50%;">](https://github.com/marcelq11/pngtoautoware/blob/main/pid.png?raw=true)
 
