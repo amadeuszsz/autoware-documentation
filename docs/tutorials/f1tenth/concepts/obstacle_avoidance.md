@@ -69,8 +69,11 @@ Follow these steps to install the Obstacle Avoidance Node:
 
 
 ## Images 
-![Obstacle Detection System](images/zdj1.jpg "Obstacle Detection and generated trajectory")
-![Obstacle Detection System](images/zdj2.jpg "Obstacle Detection and generated trajectory")
+<!-- ![Obstacle Detection System](images/zdj1.jpg "Obstacle Detection and generated trajectory") -->
+<!-- ![Obstacle Detection System](images/zdj2.jpg "Obstacle Detection and generated trajectory") -->
+![Obstacle Detection System](https://github.com/amadeuszsz/autoware-documentation/assets/59866706/13b76b48-01af-4144-9a41-3d681ac5b26f)
+![Obstacle Detection System](https://github.com/amadeuszsz/autoware-documentation/assets/59866706/9af4a98d-9d3f-49ba-9ffc-cbee1c5c913c)
+
 
 ### Overview
 This screenshot displays a visualization in RViz of an obstacle avoidance simulation for an autonomous vehicle using Autoware and ROS 2.
