@@ -40,14 +40,14 @@ end for
 
 A block diagram shows the structure of the F1tenth vehicle control program with the implemented ROS node responsible for the CEM steering controller.
 
-![blokowy](./media/schemat_blokowy.png)
+![blokowy](https://github.com/amadeuszsz/autoware-documentation/assets/101112200/c33a28d8-9451-4cb4-8e08-6ad84326a1fb)
 
 
 ### Obtained results
 &emsp; The final version of the controller allowed to perform a full lap, but the jerky nature of  he steering caused by the nature of the controller prevents stable repetition of laps. Reducing the speed to 75% of the maximum speed allowed for stable laps. The dynamic change in the position of the wheels led to problems with the stability of the cartographer's pack, which directly led to problems with locating the vehicle on the map, resulting in collisions with the wall.
 
 
-[![](./media/thumbnail.png)](https://youtu.be/zLHvjh3hEIg)
+[![](https://github.com/amadeuszsz/autoware-documentation/assets/101112200/f6215cb1-59ed-4316-9d83-4d387868d3f3)](https://youtu.be/zLHvjh3hEIg)
 
 ## Launching package
 Before launching, it is necessary to download packages via the `f1tenth_awsim_04.repos` file, which contains the mentioned controller. This should be done with the command:
@@ -67,9 +67,9 @@ Put your vehicle in autonomous driving mode. Press the B button on the pad, then
 A node subscribing to the topic `/awsim/ground_truth/vehicle/pose` was created to compare controllers based on the distance from the nearest point of the reference path. The subscribed position values were saved to a `.csv` file to calculate the nearest point from the reference trajectory list.
 ### Results
 
-![path](./media/path.png)
-![error](./media/error.png)
-<obrazy>
+![path](https://github.com/amadeuszsz/autoware-documentation/assets/101112200/21f62e0c-162d-4c50-bf3a-da490877faad)
+![error](https://github.com/amadeuszsz/autoware-documentation/assets/101112200/c2e87af6-c7dc-4923-a883-d62b82a782fb)
+
 ## Conclusions
 
 - The characteristics of the CEM controller means that operation at higher speeds negatively affects the stability of other systems - notably catrographer node,
