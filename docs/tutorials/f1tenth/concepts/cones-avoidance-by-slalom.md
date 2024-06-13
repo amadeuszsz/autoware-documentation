@@ -15,7 +15,7 @@ The main parts of the project are:
 This task needs simulation environment, such can be found at: [google drive](https://drive.google.com/file/d/120lfWwmwZQP8B92OaJJC9ZP7CW3OX9RW/view?usp=sharing)
 
 ## System schematic
-![Cones avoidance schematic](./assets/cones_avoidance_schematic.png)
+![Cones avoidance schematic](https://github.com/amadeuszsz/autoware-documentation/assets/28186871/d829c5d9-9341-4f7c-86e7-bc3f48b3d422)
 
 ## Perception
 Node `cones_detection` is designed to detect cones with respect to Formula Student regulations. This task has implemented YOLOv8 algorithm and NVidia TensorRT optimalization platform for acceleration purposes, utilizing GPU.
