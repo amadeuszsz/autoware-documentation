@@ -1,3 +1,4 @@
 nav:
+  - cem_controller.md
   - map-build.md
   - trajectory-generate.md
