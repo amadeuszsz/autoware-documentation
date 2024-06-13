@@ -1,3 +1,4 @@
 nav:
   - map-build.md
   - trajectory-generate.md
+  - dstar-avoidance-planning.md
