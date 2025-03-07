@@ -136,7 +136,7 @@ Desktop and Jetson installation process differ in two aspects - desktops platfor
 2. Pull base docker image & build F1TENTH Docker image:
 
    ```bash
-   docker pull ghcr.io/autowarefoundation/autoware-universe:humble-2024.02-cuda
+   docker pull ghcr.io/autowarefoundation/autoware:humble-2024.02-cuda-amd64
    cd ~/autoware/.devcontainer
    ./build.sh
    ```
